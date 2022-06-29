@@ -63,6 +63,8 @@ Windows\System32\winevt\logs\Security
 
 #### Service
 
+Service with 0x02 flag start at boot
+
 ```
-SYSTEM\CurrentControlSet\Service
+SYSTEM\CurrentControlSet\Services
 ```

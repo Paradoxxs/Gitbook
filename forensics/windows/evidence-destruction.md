@@ -6,6 +6,8 @@ description: Identifying if evidence destruction have been performed.
 
 #### Log clearing
 
+Event logs created when logs are cleared
+
 Event ID: \
 Security : 1102 \
 System : 104

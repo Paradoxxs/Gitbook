@@ -38,8 +38,7 @@ PyWMIPersistanceFinder.py
 #### Command line event log
 
 Event id\
-Security: 4688
-
+Security: 4688\
 Powershell\operational: 4103 - 4106
 
 ```
@@ -61,4 +60,5 @@ Windows\System32\winevt\logs\Powershell\operational
 
 ```
 NTUSER.dat\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
+NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\policies\RunMRU
 ```

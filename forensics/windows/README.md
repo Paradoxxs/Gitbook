@@ -204,6 +204,28 @@ Highly volatile hardware using to stored information that the computer access fr
 
 Introduced by Microsoft was an energy saving solution, where it will write the data in RAM to disk (hiberfil.sys). It was later restructured in win 10 to fast startup, which reduce the amount of time required for boot, this was done by using hibernation function, by freezing CPU and memory to the hiberfil.sys file.
 
+
+
+* There exists two type of hibernation file full and reduced, Both is a compressed copy of RAM Full occure when the computer hibernation, which happens when battery get to a certain point.
+* There will be created a new smaller hibernation file at reach reboot, to allow for fast startup which is on by default.
+
+![](https://remnote-user-data.s3.amazonaws.com/kAsejjxHq94r3yoA\_LGM7FteJanf0ryxGdPMvDVboSeyvqIKIyhU\_7iArh08Aqe8btPUkocjKVpRYS9ywxcPHae8bwk4cou1oQxjz4r0iPI-p\_wAo-C0kCPGhu8RDua-.png)
+
+#### Tools
+
+Dump memory:\
+F-Response\
+Belkasoft live ram capture\
+Magnet Forensics RAM capture
+
+Decompress:\
+Volatility imagecopy\
+Comae hibr2bin.exe\
+Arsenal Hibernation recon
+
+Analysis:\
+Volatility
+
 #### Data
 
 * Processes
@@ -258,6 +280,46 @@ If modified date is older than created date mean the file or folder have been co
         * 7036 - service start or stop
         * 7040 - start type changed
         * 7045 - new service installed
+
+
+
+## Shell items
+
+Data or files that has information to access another file is known as a shell item. Representation of an item, shortcut files is an shell item
+
+### Shortcut (.lnk) files
+
+Creation, opening files will create an shortcut file. If two files in different location exist with the same name, only one shortcut file will be created. After win 8 url can also become shortcut files.
+
+Data
+
+* Created : first opened
+* Modified : last opened
+* Target file MAC times
+* Volume information (name, Type, Vol. serial #)
+* Fixed, removable, network target
+* Original path and location
+
+Tool
+
+* LEcmd - Eric Zimmerman
+* LP - TZWorks.net
+
+### Jumplist
+
+From Windows 7 and up taskbar (Jump List) was created to allow users to “jump” or access items they have frequently or recently used. This function not only include recent media files, but also include recent tasks. Right-clicking an application in the taskbar, you will see recent files open by that application and tasks based on the user behavior.
+
+The data is stored in the AutomaticDestinations folder in files that is orderby AppID of the associated application. The appID are universal which allow for a library to match the ID to an application.
+
+You will see two files AutomatiDestination and CustomDestination.
+
+To extract information from CustomDestination must first be carved for lnk files or extracted using hex editor.
+
+The files are database files which mean once something have been added it hard to remove data from it. There are no limit how many entries a database file can store.
+
+Tools
+
+* AutomaticDestination : MiTec Structured storage viewer
 
 ## References
 
