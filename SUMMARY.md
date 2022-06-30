@@ -44,6 +44,7 @@
 * [Dark web](osint/dark-web.md)
 * [Pivoting](osint/pivoting.md)
 * [Techniques](osint/techniques.md)
+* [Cryptocurrency](osint/cryptocurrency.md)
 
 ## ⚙ Reverse engineering
 
