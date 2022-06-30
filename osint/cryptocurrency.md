@@ -22,5 +22,16 @@ Exchanges will group multiple transactions together into one block, making it ha
 
 
 
+## Investigation
 
+Blockchain.com and blockstream.info, both allows you to explore the ledger without having to join as a node. Limited in it usability and quickly become hard to track when multiple wallet are used.
+
+
+
+#### Tools
+
+* blockchain.com
+* Chainalysis
+* Maltego
+  * Allow to visualization the investigation of bitcoin blockchain by using the blockchain.info transform.
 

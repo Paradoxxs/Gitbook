@@ -8,7 +8,7 @@ description: >-
 
 It important before you even start your journey into OSINT that you have your methodology in place.
 
-
+[https://github.com/Paradoxxs/Cybersecurity/blob/master/OSINT.md](https://github.com/Paradoxxs/Cybersecurity/blob/master/OSINT.md)
 
 ## OSINT cycle
 

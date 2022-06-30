@@ -6,14 +6,14 @@ Steps takes during windows acqusition, triage image might be skipped it all depe
 
 ### Create memory image
 
-Live
+#### Live
 
 * FTK imager
 * Magnet forensics RAMCapture
 * Belkasoft Live RAM capturer
 * DumpIT
 
-Deadbox
+#### Deadbox
 
 * Hibernation file
   * %SystemDrive%/hiberfil.sys
@@ -24,20 +24,22 @@ Deadbox
 
 #### Check for disk encryption
 
+Ensuring the computer and any attached disk are not encrypted, if they are now is the time to extract data from the different sources.
+
 * Tool
   * Magnet forensics encryption disk detector
   * Live logical image evaluation
 
 ### Create quick triage image
 
-Because of the increasing the size of disk, the process of during full disk imaging have become too slow.
+Because of the increasing the size of disk, the process of doing full disk imaging have become too slow. Another reason for during triage image is that you only require an minimal amount of data to get most of the context on the computer.
 
-Tools
+#### Tools
 
 * CYLR - using config file
 * FTK imager - Create custom content image
 
-Key Artifacts
+#### Key Artifacts
 
 * Registry hives and backups
   * Transaction logs
@@ -54,6 +56,10 @@ Key Artifacts
 
 ### Begin analysis of triage image
 
+Here we analysis the triage image and identify if we need additional data for the case, if not we go to the next stage of imaging the entire drive.
+
 ### Image entire hard drive
+
+The process of imaging the entire drive of the device.&#x20;
 
 * FTK imager - Create disk image

@@ -4,7 +4,7 @@ description: Are hidden network which requires special tools to access .e.g TOR
 
 # Dark web
 
-###
+### [https://github.com/Paradoxxs/Cybersecurity/blob/master/Darkweb%20operations.md](https://github.com/Paradoxxs/Cybersecurity/blob/master/Darkweb%20operations.md)
 
 ### Freenet&#x20;
 

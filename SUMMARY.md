@@ -12,6 +12,7 @@
 
 ## 🔬 Forensics
 
+* [Digital forensics](forensics/digital-forensics.md)
 * [🖥 Windows](forensics/windows/README.md)
   * [User activity](forensics/windows/user-activity.md)
   * [System information](forensics/windows/system-information.md)
@@ -32,6 +33,8 @@
 * [Linux](forensics/linux.md)
 * [IOS](forensics/ios.md)
 * [Android](forensics/android.md)
+* [Network](forensics/network.md)
+* [Cloud](forensics/cloud.md)
 
 ## Other
 
@@ -48,6 +51,7 @@
 
 ## ⚙ Reverse engineering
 
+* [Overview](reverse-engineering/overview.md)
 * [Malware analysis](reverse-engineering/malware-analysis.md)
 * [Windows](reverse-engineering/windows.md)
 * [MacOS](reverse-engineering/macos.md)
@@ -55,8 +59,13 @@
 
 ## Acquisition
 
+* [Overview](acquisition/overview.md)
 * [Windows](acquisition/windows.md)
 
-## Group 1
+## 🔍 Analysis
 
-* [Memory](group-1/memory.md)
+* [Memory](analysis/memory.md)
+
+## 🚒 Incident response
+
+* [Overview](incident-response/overview.md)

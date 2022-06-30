@@ -50,4 +50,4 @@ What tools, techniques, etc. do they use to perm their action
 
 ### Mitre attack
 
-Track the different tactic that can be used in an attack and track the tactic the different threat group utilize.
+Track the different tactic that can be used in an attack including the tactic the different threat group utilize.

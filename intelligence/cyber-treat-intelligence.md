@@ -4,6 +4,10 @@ description: Taking intelligence and applying it to cyber
 
 # Cyber treat intelligence
 
+## Threat hunting
+
+Is the active process of trying to find signs of compromise.
+
 ### Intel to threat hunting and incident response
 
 1. Threat model
@@ -18,11 +22,11 @@ description: Taking intelligence and applying it to cyber
    * Identify gaps and opportunities of improvement
    * Create playbooks for future investigation against the TTP in your environment
 
-### The Rule of 2
+## The Rule of 2
 
 Simply way for campaign creation is applying the diamond model looking for overlaps between two vertices in intrusions or campaigns.
 
-### Pyramid of pain
+## Pyramid of pain
 
 The higher up in the pyramid of pain, the more difficult will it will for the threat actor to change their behaviour.
 
