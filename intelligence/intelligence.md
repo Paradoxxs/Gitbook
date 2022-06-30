@@ -54,7 +54,7 @@ More importantently identify where you are missing sources of information.&#x20;
 
 ### Processing
 
-Data is transformed into a understandable format.
+Transforming the data into a human understandable format.
 
 #### Rosetta stone
 
