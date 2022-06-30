@@ -5,7 +5,6 @@
 ## 🧠 Intelligence
 
 * [Intelligence](intelligence/intelligence.md)
-* [Intelligence lifecycle](intelligence/intelligence-lifecycle.md)
 * [Threat modeling](intelligence/threat-modeling.md)
 * [Cyber treat intelligence](intelligence/cyber-treat-intelligence.md)
 * [Frameworks](intelligence/frameworks.md)
