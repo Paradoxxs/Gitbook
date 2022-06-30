@@ -5,6 +5,7 @@
 ## 🧠 Intelligence
 
 * [Intelligence](intelligence/intelligence.md)
+* [Analysis](intelligence/analysis.md)
 * [Threat modeling](intelligence/threat-modeling.md)
 * [Cyber treat intelligence](intelligence/cyber-treat-intelligence.md)
 * [Frameworks](intelligence/frameworks.md)
@@ -64,7 +65,7 @@
 
 ## 🔍 Analysis
 
-* [Memory](analysis/memory.md)
+* [Memory](group-1/memory.md)
 
 ## 🚒 Incident response
 
