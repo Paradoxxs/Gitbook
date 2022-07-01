@@ -1,4 +1,4 @@
-# Suck puppet
+# Sock puppet
 
 
 
@@ -31,6 +31,17 @@ It important to note do not just use an random picture on the internet. There an
 Who is the suck puppet, Here [https://www.fakenamegenerator.com/](https://www.fakenamegenerator.com/) is to your rescure. \
 It allows you to generate an complete persona for you to use in your sock puppet. \
 Remember to save the information somewhere safe that only you have access to.
+
+#### Other
+
+Something you might need additional information to make the persona appear more real,\
+Here [https://thisxdoesnotexist.com/](https://thisxdoesnotexist.com/) can be of some help to generate different type of object that can be used on your persona to make it appear real.&#x20;
+
+#### Interaction
+
+None will believe your persona is real, if it does not interact with the platform, but as the amount of puppet you have increases it get more difficult to login in and interact with them.\
+Which is why we need to automate this part.\
+Using [https://ifttt.com/](https://ifttt.com/) can help you create simple logic flow that perform actions based on input from different sources.&#x20;
 
 ### Password manager
 

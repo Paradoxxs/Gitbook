@@ -7,7 +7,9 @@ description: >-
 
 # Digital forensics
 
-[https://github.com/Paradoxxs/Cybersecurity/blob/master/Digital%20Forensics.md](https://github.com/Paradoxxs/Cybersecurity/blob/master/Digital%20Forensics.md)
+## Overview
+
+Digital forensics is a branch of forensics science encompassing the recovery and investigation of material found in digital devices, often in relation to computer crime. So, Forensics is the technical process of recovering or collecting evidence that will be used in an investigation. In regards to Security Operations, this discipline is often associated with monitoring of employees to maintain a high-security posture, aiding with incident response to reveal details of how a compromise occurred and any post-actions (known as DFIR), as well as other tasks which require a ‘deep-dive’ into technical aspects.
 
 Digitial forensic expert help to identify the:
 
@@ -15,21 +17,104 @@ Digitial forensic expert help to identify the:
 * Means - The tools and method used
 * Opportunity - How and when the activity was performed.
 
+#### What is forensically sound
+
+* Consistent
+* Repeatable
+* Well documented
+
+
+
+## Type of forensics
+
+
+
+#### Data artifact
+
+* BIOS
+* Unified extensible firmware interface (UEFI)
+* RAM
+* Logs
+* Infrastructure logs (router, switch, firewall, etc.)
+  * Windows : C:\windows\Systems32\config
+* Network attack storage (NAS)
+* Harddisk
+  * Mapped drives
+  * Universal naming convention (UNC paths)
+* IOT
+  * Where is the data and who do you acquire it
+* Cloud storage
+* Removeable drive
+  * What removeable devices have been connected to the computer This can include usb drives, external hard drives, phone and tables.
+* Unorthodox
+  * Private cloud
+  * P2P network
+  * Virtual hard drives
+  * Virtual machines
+  * Encrypted contained
+
+### Computer Forensics
+
+* Identifying, collecting, and preserving evidence taken from desktops, laptops, and other computer systems and storage media for the purpose of aiding investigations or legal proceedings.
+
+### Network Forensics
+
+* The monitoring, collection, and analysis of network activities such as visited websites and connected IPs, usually associated with incident response and intrusion detection.
+
+### Memory Forensics
+
+* The process of recovering evidence from the RAM of a running system (also known as live acquisition or live response).
+
+### Mobile Forensics
+
+* The process of recovering evidence from mobile phones, SIM cards, PDAs, tablets, and other mobile devices.
+
+### Communication
+
+The process of recovering evidence of communuication between two or more people
+
+### Location history
+
+Identify location data of where the subject have been
+
 ## Chain of Custody
 
 Chain of Custody is the “logical sequence of gathering evidence, whether it be physical or electronic in legal cases”.\
-&#x20;If this process is not followed properly, the evidence collected may be rendered inadmissible in court, so legal prosecution can’t take place.\
-&#x20;Forcing prosecutors to take such a professional and cautious approach to evidence collection and storage, ensures that evidence is accurate, and has not been tampered with, so justice can be achieved. \
+If this process is not followed properly, the evidence collected may be rendered inadmissible in court, so legal prosecution can’t take place.\
+Forcing prosecutors to take such a professional and cautious approach to evidence collection and storage, ensures that evidence is accurate, and has not been tampered with, so justice can be achieved. \
 It is important to have a record of who collected a piece of evidence, and who has been responsible for it since it was collected. \
 This means if anything happens to it, the person assigned can be held accountable.\
 
 
 ## Evidence
 
-If an Analyst is conducting a forensic investigation on a hard-drive image, they should NOT be working on the original copy of the evidence. \
-The original disk image should be hashed (the mathematical calculation which results in a unique text string specific to that exact file) and then a full bit copy should be taken, ensuring that absolutely everything is included in the copied image.&#x20;
 
-This new file should then be hashed, and if it is an exact copy, the file hashes will be the same. The analyst should then work on the copy, so the original evidence is not modified, making it inadmissible in court. When copying evidence to a forensic disk (a high capacity hard-drive used only for forensic investigations or incident response), the storage media should be completely sanitised, to ensure that there is no data already on it, as this could contaminate the evidence.
+
+### Handling evidence
+
+It important when analysis is working on evidene that only an copy of the evidence.\
+This way it always possible to go back to the original evidence to see if anything have been altered during the analysis process.\
+The way evidence is compared is by using cryptographic hashes&#x20;
+
+#### Computer
+
+Evidence will be files and other data on electronic storage media, such as hard-drives in desktops, laptops, and mobile devices
+
+#### Network
+
+Network devices such as a web proxy or router, e.g. will also hold information about network connection, requested sites, etc.
+
+#### Mobile devices
+
+The wealth of information on our phones is include, and can be very useful to investigators. Evidence such as call history (incoming/outgoing/number/duration), text messages, contacts, web history, images, videos, apps, GPS location, notes, and much more can be retrieved Handling evidence using Chain of custody
+
+#### Forensic snapshots
+
+For mission critical internal servers and serves exposed to the internet, your efforts also should include creating periodic system snapshots. It a collection of data that documents the configuration and running state of the machine at a point in time.
+
+Its purpose is to provide a baseline against which later snapshot can be compared in order to detect changes. Presumably, we have a before snapshot, when we assume the machine is working fine and there have been no been compromis, and an snapshot taken after problems began or after a suspected compromise.
+
+The before and after snapshots can be compared so that only the differences are listed. This process is useful for troubleshooting, but we mainly wish to use these snapshots to detect intrusions, to know how our adversaries have modified our systems, and provide forensics evidence that might be admissible in court of law.
 
 ## Timeline analysis
 
@@ -62,6 +147,26 @@ When recovering artifact it important to see the context surrounding the artifac
   * Super timeline creation
 * Filter the timeline
 * Analyze the timeline - Focus on the context of the evidence.
+
+
+
+## Detecting Evidence destruction
+
+The process of looking for signs of tampering of the device or data, with the purpose of removing the evidence of one activity.
+
+There are many ways of detecting tampering of evidence, the most common once are lack of usage data, created date, database inconsistency.
+
+* Change hardware components
+  * SMART
+    * Hardware operation metrics, e.g. how long it have been in used, etc.
+* Deleting files
+  * File carving
+* Clearing cache
+* Removing application
+* Selectively deleting messages or history
+* Wiping device
+  * Lack of usage
+* Modifying files to advoid detection.
 
 ## Research
 

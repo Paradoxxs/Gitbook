@@ -48,6 +48,11 @@ What tools, techniques, etc. do they use to perm their action
 6. A relationship always exists between the Adversary and their Victim(s) even if distant, fleeting, or indirect.
 7. There exists a subset of the set of adversaries which have the motivation, resources, and capabilities to sustain malicious effects for a significant length of time against one or more victims while resisting mitigation efforts.
 
+#### The rule of 2
+
+Taking specific indetifier, correlated on two or more verticals with the diamond model can be used to define an activity group. \
+e.g. observation of a very specific capability, which communicate consistently with infrastructure, that could be defined as a activity group  &#x20;
+
 ### Mitre attack
 
 Track the different tactic that can be used in an attack including the tactic the different threat group utilize.

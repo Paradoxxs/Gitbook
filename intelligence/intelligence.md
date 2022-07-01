@@ -7,7 +7,9 @@ description: What is intelligence
 
 
 The goal of threat intelligence is to gather, evaluate and analysis data related to an threat actor.\
-with the goal to better insight to the tactic technique and procedure (TTP) to make better decisions on how to mitigate risk to organization.
+with the goal to create better insight to the tactic technique and procedure (TTP), so that policy makers can make better decisions on how to mitigate risk.
+
+Intelligence analysis is done when you do not have all the facts, an assessment needs to be performed, on the likelyhood that the hypothesis can be rejected or not.&#x20;
 
 ### Intelligence level
 

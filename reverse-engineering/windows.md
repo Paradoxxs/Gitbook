@@ -1,3 +1,7 @@
+---
+description: Malware techniques uses to obfuscate the true intent
+---
+
 # Windows
 
 Windows malware techniques to obfuscate the true intent of the software.
@@ -101,3 +105,9 @@ If the same function is called multiple times there high possibility it a decryp
 ### Syscalls
 
 Instead of using ntdll.dll to make syscalls, they are instead directly called by using the syscall ID of the call we want to execute.
+
+
+
+### Resources
+
+{% embed url="https://malapi.io/" %}

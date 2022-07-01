@@ -1,10 +1,15 @@
 ---
 description: >-
-  Using the open source public data that is avilable to everyone, to gather
-  information about the target.
+  Process of using he open source public avilable data, to gather information
+  about the target.
 ---
 
 # What is OSINT
+
+OSINT  as a source is an great way to discover information about an target organization or individual. \
+Working out what systems a company uses. User information can be harvested, allowing potentially effective social-engineering vector.
+
+
 
 It important before you even start your journey into OSINT that you have your methodology in place.
 

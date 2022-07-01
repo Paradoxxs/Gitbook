@@ -14,6 +14,8 @@
 ## 🔬 Forensics
 
 * [Digital forensics](forensics/digital-forensics.md)
+* [Computer forensics](forensics/computer-forensics.md)
+* [Disk](forensics/disk.md)
 * [🖥 Windows](forensics/windows/README.md)
   * [User activity](forensics/windows/user-activity.md)
   * [System information](forensics/windows/system-information.md)
@@ -36,6 +38,7 @@
 * [Android](forensics/android.md)
 * [Network](forensics/network.md)
 * [Cloud](forensics/cloud.md)
+* [File carving and data recovery](forensics/file-carving-and-data-recovery.md)
 
 ## Other
 
@@ -44,11 +47,13 @@
 ## 🕸 OSINT
 
 * [What is OSINT](osint/what-is-osint.md)
-* [Suck puppet](osint/suck-puppet.md)
-* [Dark web](osint/dark-web.md)
+* [Sock puppet](osint/sock-puppet.md)
+* [Dark web](osint/dark-web/README.md)
+  * [What is the dark web](osint/dark-web/what-is-the-dark-web.md)
 * [Pivoting](osint/pivoting.md)
 * [Techniques](osint/techniques.md)
 * [Cryptocurrency](osint/cryptocurrency.md)
+* [Automation](osint/automation.md)
 
 ## ⚙ Reverse engineering
 
@@ -70,3 +75,7 @@
 ## 🚒 Incident response
 
 * [Overview](incident-response/overview.md)
+
+## Putting it all together
+
+* [Treat actor hunting](putting-it-all-together/treat-actor-hunting.md)

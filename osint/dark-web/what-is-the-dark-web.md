@@ -1,10 +1,8 @@
 ---
-description: Are hidden network which requires special tools to access .e.g TOR
+description: An quick overview of what the dark web is.
 ---
 
-# Dark web
-
-### [https://github.com/Paradoxxs/Cybersecurity/blob/master/Darkweb%20operations.md](https://github.com/Paradoxxs/Cybersecurity/blob/master/Darkweb%20operations.md)
+# What is the dark web
 
 ### Freenet&#x20;
 
