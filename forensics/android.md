@@ -1,10 +1,12 @@
+---
+description: Basic understanding of internals workings of the Android system.
+---
+
 # Android
-
-
 
 ## Design
 
-Android operating system is a open source and based on Linux kernel. The android version of the device can vary widely because it be modified by the mobile developer, plus it up to the manufactor to allow for new update to be installed, which is why you can see all version of Android and you need to be prepared for it.
+Android operating system is a open source and based on Linux kernel. The android version of the device can vary widely because it be modified by the mobile developer, plus it up to the manufacturer to allow for new update to be installed, which is why you can see all version of Android and you need to be prepared for it.
 
 User data may be stored internally and externally on Android devices. The internally stored data is saved to the NAND flash memory. The NAND is non-volatile memory, which means the data is not lost when the smartphone loses power. The NAND stores the bootloader, operating system, and user data. Although application data may be open and present in RAM, it is only temporarily stored in RAM while in use. The actual application data is stored on the NAND flash memory or the SD card inserted in the device. A RAM capture may be possible on some Android devices, which renders data that will no longer be available when the device is rebooted or powered off.
 
