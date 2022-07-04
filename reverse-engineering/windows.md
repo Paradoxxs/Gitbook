@@ -84,30 +84,12 @@ It is common to set the new memory to location protection to RWX\[40], Another w
 fs: \[30] = PEB\
 Allows the program to get access to the PEB which can be used for multiple things e.g. checking if IsDebugging enabled
 
-```
+````
 mov eax, fs[30]
 mov eax [eax+2]
 test eax,eax
-```
-
-### Identifying interresting areas
-
-Some techniques that have been developed as I reverse engineered software.
-
-#### Utility functions
-
-If there isn't an test after an call it most likely not of interest as the function called not does have an return value and most likely an utility function.
-
-#### Decryption function
-
-If the same function is called multiple times there high possibility it a decryption function
-
-### Syscalls
-
-Instead of using ntdll.dll to make syscalls, they are instead directly called by using the syscall ID of the call we want to execute.
-
-
+````
 
 ### Resources
 
-{% embed url="https://malapi.io/" %}
+[malapi](https://malapi.io/)
