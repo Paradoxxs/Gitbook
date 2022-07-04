@@ -32,6 +32,12 @@ Who is the suck puppet, Here [https://www.fakenamegenerator.com/](https://www.fa
 It allows you to generate an complete persona for you to use in your sock puppet. \
 Remember to save the information somewhere safe that only you have access to.
 
+
+
+#### phone number
+
+Some sites and social media requires the usage of an phone number for registration, here VOIP can be used for the registration of the account. [https://www.voip-info.org/voip-service-providers-business-europe/](https://www.voip-info.org/voip-service-providers-business-europe/) have a list of providers of VOIP in different countries.&#x20;
+
 #### Other
 
 Something you might need additional information to make the persona appear more real,\
