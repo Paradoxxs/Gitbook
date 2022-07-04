@@ -5,9 +5,9 @@
 ### File signature
 
 ```
-    - Every file have a hex signature which allow once to disguise from each other even if the file extensions is missing or does not match.
-    - Reference
-        - [File Signature Database:](https://filesignatures.net/) 
+- Every file have a hex signature which allow once to disguise from each other even if the file extensions is missing or does not match.
+- Reference
+    - [File Signature Database:](https://filesignatures.net/) 
 ```
 
 ### Metadata

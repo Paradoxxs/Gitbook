@@ -15,7 +15,8 @@
 
 * [Digital forensics](forensics/digital-forensics.md)
 * [Computer forensics](forensics/computer-forensics.md)
-* [Disk](forensics/disk.md)
+* [Disk](forensics/disk/README.md)
+  * [File carving and data recovery](forensics/disk/file-carving-and-data-recovery.md)
 * [🖥 Windows](forensics/windows/README.md)
   * [User activity](forensics/windows/user-activity.md)
   * [System information](forensics/windows/system-information.md)
@@ -32,13 +33,12 @@
   * [Network activity](forensics/windows/network-activity.md)
   * [File knowledge](forensics/windows/file-knowledge.md)
   * [Mail](forensics/windows/mail.md)
-* [macOS](forensics/macos.md)
+* [MacOS](forensics/macos.md)
 * [Linux](forensics/linux.md)
 * [IOS](forensics/ios.md)
 * [Android](forensics/android.md)
 * [Network](forensics/network.md)
 * [Cloud](forensics/cloud.md)
-* [File carving and data recovery](forensics/file-carving-and-data-recovery.md)
 
 ## Other
 
