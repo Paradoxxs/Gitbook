@@ -1,6 +1,13 @@
 # Analysis
 
-Structured analysis
+Analysis is detailed examiniation of element, by breaking something down into its parts to better understand how it operate.
+
+This is what we do with incident and threat actors, we try to deconstruct it down to understand how they operate.
+
+The other part we do is synthesis of information by taking different pieces of information and putting whem together to get an better picture of the actor.
+an example could be multiple intrusions we put together to find overlapping peices of information.
+
+## Structured analysis
 
 ### Competing hypotheses&#x20;
 

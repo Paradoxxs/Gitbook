@@ -80,25 +80,36 @@ nfcapd - Tactical capture for small to mid size, long-term collection nfpcapd - 
 
 Artifacts of what happened, because there is no standard format for logging it have to be parsed and analyzed.
 
-Protocols HTTP Overview ASCII-based stateless protocol using port 80 for communication, which can be used in a varity of way: document, raw daa, media, api, etc. Forensics wise it allow for analysing user activity during web browsing. Version HTTP/1.1:1997 (most common today) HTTP/2:2015 (binary, multiplexed, generally with TLS) Fully multiplexed allow for multiple requests per packet, Compressed headers in tags. Also allow server to force push objects to the browsers without it having it been requested.
 
-```
-    Design
-        HTTP/1.1 
-            Header 
-                Request
-                    https://remnote-user-data.s3.amazonaws.com/RYloS0MpQoA_8382CLkVkKqKy16nt3CBnVs8IgdIF8VKwX2ESAxkBQxJTBqGwFs4b_u7XXL7G7kxxLLFcAwXs-nK0g7RG9PYpjJ13IwG1O5aQLDu7W5XVFbJ90-MPrMH.png 
-                    Most of field in the header are optional 
-                Response
-                    https://remnote-user-data.s3.amazonaws.com/uVVSf0vfI85YLghkFYRRdWmGkQiaT_NmgtOItvmfmJ01H09uBUgY114eoKft4W3BldMUridlqUrpUfxe5P4Go8AujTEF2Cra0FL5UxIrWpY0i0XRVXZz_HuPo6oN3T-I.png 
-                Content 
-                    Can be part of both request and response, the format of the content can be anything, 
-```
 
-Client can define the format it accept in it request header. Logs Format NCSA common format https://remnote-user-data.s3.amazonaws.com/HSVW\_o03n0MCx3RX3fpgxFtYuhwIvkyA\_dTeHrQsR-\_4uGzDQBddGP5TKaxyXJflCx4PH8vXUF\_QR3wpKq2DgzLH5YXTMKggfBh2aGBNwLwIyDtaXLHD1hzexlttr3st.png W3C Extended format https://remnote-user-data.s3.amazonaws.com/iSzftzAwmyHOGX6vfbQX9Orrkj0y8Q0BP9VT-oDuWh-UfR9D2OR3802FYiyj-Yfv-60aaZwnJDR8sgS29OajUyWH6xon7C3m1nmBGcnG23cpoXAWZ8Wf0nrlxoTg9Vnd.png IIS log file https://remnote-user-data.s3.amazonaws.com/Be8U\_\_8Fv-1cuZwvC6FnyB1nvchrr-SR0PtN5YDcxx7PYYHS6EhTRpj9aqkWAsXvHT4WyIFg-vacQN\_\_DV6iz\_SIepJ4AHF0wIPAd8WWNO2oeSjkSuctMtmFfyj8zCuV.png Resource List of HTTP header fields - Wikipedia DNS SMB
 
-Analysis Network statistics analysis Because of the amount of data that needs to be analyzed in network forensics an good starting point is using statistics to get an idea of how the data is layout, One way of doing this is to plot the data onto a graph to visual the data and look for outliner in the data set. frequency analysis to see if some packets appear more often then expected. This is just some of the statistics method that can be used to understand the data, and identify what packets that needs to be examined more closely. Data driven analysis Very similar to statistics analysis\
-Expected protocol and connection Map out the protocol and connection that you expect from the network e.g. https://remnote-user-data.s3.amazonaws.com/ISJTIsCmlagnM9tZXv0nT8rnOCWm\_HdJ3oPJOFWKAWwgWacUsjdIwcGHX7H-eIPrHCDjqDuneeDPk8GvlEfrMBPVidpVpN-Qvfiyn6I2BYSPI\_JlIHn6V4BabnzU3rJO.png Encryption As encryption become more common content to become more irrelevant, which it way it have to be correlated with data on the endpoint. And malware reverse engineering can yield great insight. Mapping Time to live (TTL) By pinging a server like a mail server, you can use the response to calculate the layers of the organisation network e.g. you ping a server can get a response back that have TTL of 61, we know that OS like to use round machine numbers (32,64,etc), then by calculate the difference between the response TTL and closet machine number we can get an idea of the network layers Packet decoding Lenght : When calulating length of a packet is always multiplied by 4 to the value in length field e.g. IP header start with 45, 4 tells that is ip version 4 and 5 say the header have a lenght of 20 (5\*4)\
-Offset : When offset field is calulated is multiplied by
+# Analysis Network
 
-Protocol reverse engineering Overview Process of extracting structure, attributes and data from network protocol Purpose to generate network based IOC, and develop decoder to identify the activity. Attribute Structure Flow Encapsulation Functionality Encoding and encryption routines Data source Client/server binary or source code Captured network traffic Approaching Define what you are trying to achieve
+## Statistics analysis
+ Because of the amount of data that needs to be analyzed in network forensics an good starting point is using statistics to get an idea of how the data is layout, One way of doing this is to plot the data onto a graph to visual the data and look for outliner in the data set. frequency analysis to see if some packets appear more often then expected. This is just some of the statistics method that can be used to understand the data, and identify what packets that needs to be examined more closely. Data driven analysis Very similar to statistics analysis\
+
+## Expected protocol and connection
+
+Map out the protocol and connection that you expect from the network. Create an filter which will filter out the known good network connection. You then go through the rest of the network and start categoring it as good or bad.
+
+## Encryption
+
+As encryption become more common. Getting the content of the packet have become less possible, which it way it have to be correlated with data on the endpoint. And malware reverse engineering can yield great insight.
+  
+## Mapping uisng Time to live (TTL)
+
+This is done by pinging a server like a mail server, you can use the response to calculate the layers of the organisation network e.g. you ping a server can get a response back that have TTL of 61, we know that OS like to use round machine numbers (32,64,etc), then by calculate the difference between the response TTL and closet machine number we can get an idea of the network layers.
+
+
+
+## Protocol reverse engineering
+
+Process of extracting structure, attributes and data from network protocol Purpose to generate network based IOC, and develop decoder to identify the activity.
+Start by looking at the network attributes and 
+
+Network attribute
+- Structure
+- Flow Encapsulation
+- Functionality
+- Encoding and encryption
+- routines

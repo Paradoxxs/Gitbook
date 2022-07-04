@@ -17,49 +17,50 @@ Rule to make good sock puppet
 * Use common services e.g. gmail
 * Do not use shared information across sock puppet e.g. phone numbers
 
-### Persona generation
+## Persona generation
 
 When creating an new long term suck puppet that will interact with the target, it important that it appears to be real. The best time to do this is before you begin interacting with anyone.
 
-#### Picture
+### Picture
 
 Start by generating an picture for your profile, using [ThisPersonDoesNotExist](https://www.thispersondoesnotexist.com/) allows you to generate an face based on AI.\
 It important to note do not just use an random picture on the internet. There an real person behind that face and you do not know if your target will try to reverse image search the picture and try to contact the person.
 
-#### Persona
+### Persona
 
-Who is the suck puppet, Here [https://www.fakenamegenerator.com/](https://www.fakenamegenerator.com/) is to your rescure. \
+Who is the suck puppet, Here [fakenamegenerator](https://www.fakenamegenerator.com/) is to your rescure. \
 It allows you to generate an complete persona for you to use in your sock puppet. \
 Remember to save the information somewhere safe that only you have access to.
 
+### phone number
 
+Some sites and social media requires the usage of an phone number for registration, here VOIP can be used for the registration of the account. [https://www.voip-info.org/voip-service-providers-business-europe/](https://www.voip-info.org/voip-service-providers-business-europe/) have a list of providers of VOIP in different countries.
 
-#### phone number
+### Other
 
-Some sites and social media requires the usage of an phone number for registration, here VOIP can be used for the registration of the account. [https://www.voip-info.org/voip-service-providers-business-europe/](https://www.voip-info.org/voip-service-providers-business-europe/) have a list of providers of VOIP in different countries.&#x20;
-
-#### Other
+You can also make an CV for your sock puppet using [cvmaker](https://cvmkr.com/),
+input the information from fakenamegenerator and it will generate an professional CV for your sock puppet. if your operation is about infilltrating as a spicific profession it an good idea to actual know something about the field you are posing as.
 
 Something you might need additional information to make the persona appear more real,\
-Here [https://thisxdoesnotexist.com/](https://thisxdoesnotexist.com/) can be of some help to generate different type of object that can be used on your persona to make it appear real.&#x20;
+Here [https://thisxdoesnotexist.com/](https://thisxdoesnotexist.com/) can be of some help to generate different type of object that can be used on your persona to make it appear real.
 
-#### Interaction
+### Interaction
 
 None will believe your persona is real, if it does not interact with the platform, but as the amount of puppet you have increases it get more difficult to login in and interact with them.\
 Which is why we need to automate this part.\
-Using [https://ifttt.com/](https://ifttt.com/) can help you create simple logic flow that perform actions based on input from different sources.&#x20;
+Using [https://ifttt.com/](https://ifttt.com/) can help you create simple logic flow that perform actions based on input from different sources.
 
-### Password manager
+## Password manager
 
 As the amount of suck puppet increase, the more information you need to keep track of, \
 This is where password manager can help you manage senitive information
 
-#### Local file based software
+### Local file based software
 
 Give you full control of all the data and files,\
 can be shared the encrpted file database via cloud storage
 
-#### Cloud-based managers
+### Cloud-based managers
 
 You only have to manage the data, and leaving the security others. \
 Comes with a monthly/yearly fee.\
