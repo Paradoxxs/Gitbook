@@ -57,10 +57,11 @@
 * [Sock puppet](osint/sock-puppet.md)
 * [Dark web](osint/dark-web/README.md)
   * [What is the dark web](osint/dark-web/what-is-the-dark-web.md)
-* [Pivoting](osint/pivoting.md)
 * [Techniques](osint/techniques.md)
 * [Cryptocurrency](osint/cryptocurrency.md)
 * [Automation](osint/automation.md)
+* [Analysis](osint/analysis/README.md)
+  * [IP address](osint/analysis/ip-address.md)
 
 ## ⚙ Reverse engineering
 
