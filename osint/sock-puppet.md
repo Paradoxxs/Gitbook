@@ -1,7 +1,6 @@
 # Sock puppet
 
-
-
+Sock puppet are synthetic identities or persona.
 When needed to examine content inside site with restricted access to only authenticated user, Sock puppet is then the process of creating fake account with different persona, the goal is to hide one true intent and identify. When creating a long term sock puppet it important to define the character before taking it in use, one way is to create a character sheet for the sock puppet.
 
 Do not use the same sock puppets across engagement

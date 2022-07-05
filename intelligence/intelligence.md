@@ -11,7 +11,16 @@ with the goal to create better insight to the tactic technique and procedure (TT
 
 Intelligence analysis is done when you do not have all the facts, an assessment needs to be performed, on the likelyhood that the hypothesis can be rejected or not.&#x20;
 
-### Intelligence level
+## Intelligence sources
+
+Classic intelligence are broken into the areas to what and how you are collecting your information. Cyber threat intelligence does not have this luxury, instead we focus on all sources, by identifying various sources of data that meet the requirement and putting it all together
+
+
+## Counterintelligence
+
+The purpose of couterintelligence is to identify, assess, neutralize and exploitation of intelligence activities of an adversary.
+
+## Intelligence level
 
 Tactical
 
@@ -25,7 +34,7 @@ Strategic
 
 * Define the objectives and guidance on what threat should be mitigated and the security posture of the organization.
 
-### Threat actor
+## Threat actor
 
 Threat actor is a general term for a person or entity responsible for a cyber attack that impacts the confidentiality, integrity, or availability of an organization's assets. Most often, the term is used to describe individuals and groups that conduct malicious acts against organizations. These threat actors can be categorized as either unintentional or intentional, and internal or external.
 
@@ -68,9 +77,10 @@ Assessment of the treat TTP based on the data collected.
 
 #### Bias
 
-Everyone has bias, and it important as an analyst to be aware of your own bias, allowing you to counter your biases.
+Everyone has bias, it the human brain trying to simplify information around us.
+it important for an analyst to be aware of their own bias, allowing you to counter your biases the effect on your analysis.
 
-Which is why the CTI team, need to be compromised of multiple different type of people to combat biases.
+Which is why the CTI team, need to be compromised of multiple different type of people, with diffeence experience and backgrounds to combat their biases.
 
 Cognitive bias [24 Cognitive Biases stuffing up your thinking](https://yourbias.is/)
 
@@ -113,23 +123,18 @@ Another good idea is to add percentages to make the meaning clear. e.g. might ha
 Feedback loop for improving the process.
 
 
-
-
-
 ## Intelligence classification
 
-#### Unknown-unknown
+** Unknown-unknown**
 
 Unaware of the existence of a threat
 
-#### Known-unlnown
+**Known-unlnown**
 
 The threat is known but not understood
 
-#### Known-known
+**Known-known**
 
 We both know and understand the threat, and resource to put in place to mitigate them.
 
 
-
-####

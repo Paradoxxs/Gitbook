@@ -7,6 +7,38 @@ This is what we do with incident and threat actors, we try to deconstruct it dow
 The other part we do is synthesis of information by taking different pieces of information and putting whem together to get an better picture of the actor.
 an example could be multiple intrusions we put together to find overlapping peices of information.
 
+## Analysis judgement
+The core product of the analysis is to make an judgement based on the information that available to them, and not based on other analysis.
+If there there is not enough information to make a strong judgment, the analysis could write they have a **Low to medium confidence in the assessment**
+
+## Type of analysis
+
+There are many type of analysis and have their own way of working with information.
+
+### Data-driven
+
+Accuracy is based on the dataset completeness, logical driven.
+requirest good dataset and straightforward problems.
+
+### Conceptually driven
+
+Numerous unknowns variables and relationship.
+Accuracy is driven by mental models and feedback over time
+
+### Mosaic theory
+
+Information comes together to tell the right story, heavily based on the analyst interpretation of the information
+
+### Visual
+
+Display the information in an visual way to tell the story of the information.
+
+
+## Mental models
+
+Mental models are frame of reference or mindsets that people have adopted. That are formed from experience.
+It helps people to work with vast amount of information. It allows the analysis to make quick work of information because it something they have seen many times before, One of the downfall of mental models is analyst might make assussment about the data and not identify key information.
+
 ## Structured analysis
 
 ### Competing hypotheses&#x20;
@@ -33,3 +65,8 @@ Steps
 | Information on the dark web                           | +                    | -                           |
 | Quotes and consistently beaten on price               | +                    | +                           |
 | High amount of network traffic to unknown destination | +                    | -                           |
+
+
+## Reference 
+
+https://www.cia.gov/static/9a5f1162fd0932c29bfed1c030edf4ae/Pyschology-of-Intelligence-Analysis.pdf

@@ -9,11 +9,8 @@ description: >-
 OSINT  as a source is an great way to discover information about an target organization or individual. \
 Working out what systems a company uses. User information can be harvested, allowing potentially effective social-engineering vector.
 
-
-
 It important before you even start your journey into OSINT that you have your methodology in place.
 
-[https://github.com/Paradoxxs/Cybersecurity/blob/master/OSINT.md](https://github.com/Paradoxxs/Cybersecurity/blob/master/OSINT.md)
 
 ## OSINT cycle
 
