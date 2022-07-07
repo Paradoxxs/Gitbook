@@ -60,8 +60,12 @@
 * [Techniques](osint/techniques.md)
 * [Cryptocurrency](osint/cryptocurrency.md)
 * [Automation](osint/automation.md)
-* [Analysis](osint/analysis/README.md)
-  * [IP address](osint/analysis/ip-address.md)
+* [Sources](osint/sources/README.md)
+  * [IP address](osint/Source/ip-address.md)
+  * [Domains](osint//Sources/Domains.md)
+  * [Email](osint/sources/Email.md)
+  * [Threat intel](osint/sources/Threat%20intel.md)
+  
 
 ## ⚙ Reverse engineering
 
