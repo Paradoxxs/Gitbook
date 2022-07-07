@@ -33,3 +33,28 @@ Google search allows you to search the internet for information. Google allows y
 | cache:    | Google cache of page, it important to add \&strip=1 at the end of the url to ensure only resource from google cache is loaded. |
 | inurl:    | search for strings in url                                                                                                      |
 | link:     | Find pages that link to the website                                                                                            |
+
+### CDN (Cloudflare)
+
+As you try to identify the owner behind websites you are very likely to encounter CloudFlare. Which provide security for website to prevents attack and downtime. They are used to everyone to help provide better service to their customer.
+
+To verify if the domain still resolve at the IP address you can use the curl command,
+This will force curl to resolve the website at the defined IP address.
+
+**curl -k {domain} --resolve {domain}:{ip}** 
+
+
+**SSL certificate** are unique and has it own fingerprint, by looking at historical data you can identify what website have been associcated with the cert.
+Censys, shodan, zoomeye and crt.sh  are tools that can be used for this purpose.
+The goal is to identify what IP was used when the certificate used.
+
+**Historical DNS reconds** can be used to identify what IP address the domain in the past used to resolve at.
+
+**subdomains** are not always protected by cloudflare, often it only the main domain that is protected, by identifying subdomain you can possible identify other IP address.
+
+**favicon** are picture that is seen in the tab, can be found at example.com/favicon.ico
+Each favicon have an unqiue hash, to identify the hash faviconhash.com can be used to calculate the hash
+Tools such as sodan.io can be used to search for site with similar favicon or fav-up
+ sodan.io query :  http.favicon.hash:{hash}
+
+**Analytic id** Looking for website that have the same google analytics ID.
