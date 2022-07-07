@@ -8,6 +8,21 @@ There are many services which will provide threat intelligence, this could be an
 Data providers of information from data breaches and leaks.
 
 
+[intelX](https://intelx.io/)
+
+Present data It searches in places such as the darknet, document sharing platforms, whois data, public data leaks and others. The free service only give your selective information.
+
+[PSBDMP](https://psbdmp.ws/)
+Pastebin dumps
+
+
+[Breach directory](https://www.breachdirectory.org/)
+Allow through leaks, what makes it difference it provides you with SHA1 hash of the password, which you can crack to identify password.
+
+[leak peek](https://leakpeek.com/)
+
+Service to search in different breaches and leaks, will give you a partial password.
+
 ## Threat intel
 
 [VisusTotal](https:/www.virustotal.com)

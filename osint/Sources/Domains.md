@@ -20,9 +20,10 @@ Because the information can change overtime, which is why historical data lookup
 
 [whoisology](https://whoisology.com/)
 
-[ViewDNS.info](https://viewdns.info/iphistory/)
+[whoxy](https://www.whoxy.com/)
 
 [domainiq](https://www.domainiq.com/)
+
 Have historical Whois information, it will also try to identify other sites owned by the same person, It does comes with an price.
 
 **Reverse Whois**
@@ -37,13 +38,20 @@ Domains are linked to an IP address. To identify the IP address it point to at t
 Historical domain IP addresses:
 
 [Viewdns iphistory](https://viewdns.info/iphistory/)
+
 [PassiveDNS](https://passivedns.mnemonic.no/)
+
+## DNS
+
+Domain name service are how domain names are translated to IP addresses and back.
+It common for multiple domains to be tied to a single IP address, with DNS queries we can find those domains. An domain records contains multiple fields of data that can give us insight.
 
 ## Web archive
 
 Record websites in order to preserve websites, allowing one to look back in time to see how the internet have changed over time.
 
 [archive.org wayback machine](https://archive.org/)
+
 [archive.ph](https://archive.ph/)
 
 ## Technology
@@ -84,9 +92,9 @@ It common for website to have an SSL certificate that allow for secure connectio
 [crt.sh](https://crt.sh)
 Identify historical certificates this can allow you to identify other domains that have been registered and with who they where registered with. Where it possible to ask the register for information on the person who register the domain.
 
-[censys.io](https://search.censys.io/)
+[Censys.io](https://search.censys.io/)
 Allow you to search for certificates reuse, or pivot on different pieces of information on the cert to find new information.
-The good thing about censys is that it provided in real-time, ensuring that the data is always up to date.
+The good thing about Censys is that it provided in real-time, ensuring that the data is always up to date.
 
 ## Robots.txt
 
@@ -106,3 +114,4 @@ Identify website that link to the target domain. [Host.io](https://host.io) will
 ## Redirects
 
 Website can send http code 301 or 302 which tells the browser that the material you are looking for is at a new location. [Host.io](https://host.io) can also help you identify these.
+

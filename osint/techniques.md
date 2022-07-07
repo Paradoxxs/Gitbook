@@ -41,7 +41,7 @@ As you try to identify the owner behind websites you are very likely to encounte
 To verify if the domain still resolve at the IP address you can use the curl command,
 This will force curl to resolve the website at the defined IP address.
 
-**curl -k {domain} --resolve {domain}:{ip}** 
+**curl -k {domain} --resolve {domaipin}:{port}:{ip}** 
 
 
 **SSL certificate** are unique and has it own fingerprint, by looking at historical data you can identify what website have been associcated with the cert.
@@ -55,6 +55,6 @@ The goal is to identify what IP was used when the certificate used.
 **favicon** are picture that is seen in the tab, can be found at example.com/favicon.ico
 Each favicon have an unqiue hash, to identify the hash faviconhash.com can be used to calculate the hash
 Tools such as sodan.io can be used to search for site with similar favicon or fav-up
- sodan.io query :  http.favicon.hash:{hash}
+sodan.io query :  **http.favicon.hash:{hash}**
 
 **Analytic id** Looking for website that have the same google analytics ID.
