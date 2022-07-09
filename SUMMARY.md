@@ -46,6 +46,7 @@
 * [Android](forensics/android.md)
 * [Network](forensics/network.md)
 * [Cloud](forensics/cloud.md)
+* [SQLite](forensics/sqlite.md)
 
 ## Other
 
@@ -65,6 +66,7 @@
   * [Domains](osint/Sources/Domains.md)
   * [Email](osint/sources/email.md)
   * [Threat intel](osint/sources/threat-intel.md)
+  * [Breach & leaks](osint/sources/breach-and-leaks.md)
 
 ## ⚙ Reverse engineering
 
