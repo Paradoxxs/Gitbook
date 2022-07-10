@@ -4,6 +4,58 @@ description: Basic understanding of internals workings of the Android system.
 
 # Android
 
+## Analysis
+
+Because Android is based on an open source platform, you will encounter an wide variety of different version of Android. But what they all have in common are the core system files. 
+
+To speed up the analysis of [ALEAPP](https://github.com/abrignoni/ALEAPP) will help you parse and present some of the information from an Android dump. It important to note that no tool will parse all the data within an android. 
+E.g. a application that the tool does not parse it up to you. To understand the structure of the tables within database, and the context around the information.
+
+In the reverse engineering part of the book I will go more into depth about how to reverse a mobile application.
+
+### Locked device
+
+Work flow
+- What keeping you out FDE, DBE or secure boot
+- Crack passcode if possible
+- Try BF
+- Attempt multiple acquisiton methods
+
+
+Device\_policies.xml
+- Active-password policy
+  - Gesture or pattern = 65536
+  - Simple 4 digit pin = 131072
+  - Complex pin = 196608
+  - Alphabetic password = 262144
+  - alphanumerical password = 327680
+  - Complex password 393216
+
+### Beyond tools
+
+ Search for \.apk files for installed application Android manifest.xml contains information about the application, and the permissions, unique identificeres, etc.
+
+Locate application data
+- Userdata/dalvik-cache/arm (.dex, .oat and art files)
+- Userdata/dalvik-cache/profiles - metadata for installed apps
+- Userdata/system/packages.xml - application permission
+- userdata/system/packages.list - contains file path for the application
+- com.android.vending/database/library.db - Google account used to download apps
+- /data/com.android.vending/database/localappstate.db - Contains information about the installed packages, included deleted apps
+- Batterystats - Device batterystate, what draining the battery, etc.
+
+### Detecting Evidence destruction
+
+
+Usage stats are logged on weekly basis, by looking at the newest creation timestamp in the first week it will tell when the device was first booted up. 
+
+````
+/data/system/powermanager
+/data/system/usagestats/0/weekly/
+````
+
+Missing SD card can be proven to existence by examining **external.db**
+
 ## Design
 
 Android operating system is a open source and based on Linux kernel. The android version of the device can vary widely because it be modified by the mobile developer, plus it up to the manufacturer to allow for new update to be installed, which is why you can see all version of Android and you need to be prepared for it.
@@ -106,49 +158,10 @@ Secure startup
 
  None permanent root lost after the device is rebooted, allows access via Linux shell. It very common method for commercial forensics tools, if done incorrectly could brick the device.
 
-## Locked device
-
-Work flow
-- What keeping you out FDE, DBE or secure boot
-- Crack passcode if possible
-- Try BF
-- Attempt multiple acquisiton methods
 
 
-Device\_policies.xml
-- Active-password policy
-  - Gesture or pattern = 65536
-  - Simple 4 digit pin = 131072
-  - Complex pin = 196608
-  - Alphabetic password = 262144
-  - alphanumerical password = 327680
-  - Complex password 393216
-
-## Beyond tools
-
- Search for \.apk files for installed application Android manifest.xml contains information about the application, and the permissions, unique identificeres, etc.
-
-Locate application data
-- Userdata/dalvik-cache/arm (.dex, .oat and art files)
-- Userdata/dalvik-cache/profiles - metadata for installed apps
-- Userdata/system/packages.xml - application permission
-- userdata/system/packages.list - contains file path for the application
-- com.android.vending/database/library.db - Google account used to download apps
-- /data/com.android.vending/database/localappstate.db - Contains information about the installed packages, included deleted apps
-- Batterystats - Device batterystate, what draining the battery, etc.
-
-## Detecting Evidence destruction
-
-
-Usage stats are logged on weekly basis, by looking at the newest creation timestamp in the first week it will tell when the device was first booted up. 
-
-````
-/data/system/powermanager
-/data/system/usagestats/0/weekly/
-````
-
-Missing SD card can be proven to existence by examining **external.db**
-
-## References
+## References & tools
 
  [Android Third-Party Apps Forensics | SANS Poster](https://www.sans.org/posters/android-third-party-apps-forensics/)
+
+[ALEAPP](https://github.com/abrignoni/ALEAPP)

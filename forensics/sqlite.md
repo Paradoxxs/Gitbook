@@ -36,7 +36,6 @@ Identify deleted content within the database by looking for missing ID entries.
 
 when information is deleted from the database, it might create a unused pages that are stored on the freelist and is first reused when a new page is required. which allows forensics to acquire the deleted data. The free pages can be viewed by using an HEX viewer, then parsing the information manual. [sqlparse.py by Mari DeGrazia](https://github.com/mdegrazia/SQLite-Deleted-Records-Parser) can help you recover deleted entries within the database for you.
 
-Beside the freelist SQLIte can also store deleted data in unallocated space. They are page fragments containing random bits of data. Very much like unallocated space on a hard drive. This data have to be carved out manual using an hex editor.
 
 ### Binary large object (blob)
 
