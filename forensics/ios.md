@@ -70,6 +70,16 @@ Bit by bit access to the device, not possible because of security
 
 ## Analysis
 
+Unlike Android device, the IOS system is an closed platform, which only apple engineer have access to the source code.
+
+Because of this and the control Apple have over the platform the file structure is easier simpler to understand. 
+
+To speed up the analysis of [ILEAPP](https://github.com/abrignoni/iLEAPP) will help you parse and present some of the information from IOS dump. It important to note that no tool will parse all the data. 
+
+E.g. Application that not parsed it up to the analysis. To understand the structure of the tables within database, and the context around the information within the application.
+
+In the reverse engineering part of the book I will go more into depth about how to reverse a mobile application.
+
 ### Sysdiagnose logs
 
 Logs created by Apple to help diagnose issues, It have to be triggered by the user

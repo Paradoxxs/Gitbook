@@ -9,7 +9,8 @@ description: Basic understanding of internals workings of the Android system.
 Because Android is based on an open source platform, you will encounter an wide variety of different version of Android. But what they all have in common are the core system files. 
 
 To speed up the analysis of [ALEAPP](https://github.com/abrignoni/ALEAPP) will help you parse and present some of the information from an Android dump. It important to note that no tool will parse all the data within an android. 
-E.g. a application that the tool does not parse it up to you. To understand the structure of the tables within database, and the context around the information.
+
+E.g. Application not parsed it up to the analysis. To understand the structure of the tables within database, and the context around the information within the application.
 
 In the reverse engineering part of the book I will go more into depth about how to reverse a mobile application.
 
