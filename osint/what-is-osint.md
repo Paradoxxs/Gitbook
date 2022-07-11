@@ -13,12 +13,14 @@ It important before you even start your journey into OSINT that you have your me
 
 ## Methodology
 
--WIP-
+An set of procedure to help you perform an OSINT investigation. 
 
-## OSINT cycle
+Before you begin on your OSINT investigation you need to is an request for information (RFI). This question can come in many forms some of the more common once are **Threat assessments** monitoring of group or individual what their capability and intent. 
 
-![](<../.gitbook/assets/image (1).png>)
+**Target profiling / attribution** unmasking an profile online and offline presences, identifying the real person behind online personas.
 
+
+### OSINT cycle
 
 
 Requirement gathering

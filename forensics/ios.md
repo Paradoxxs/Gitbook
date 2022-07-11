@@ -70,9 +70,7 @@ Bit by bit access to the device, not possible because of security
 
 ## Analysis
 
-Unlike Android device, the IOS system is an closed platform, which only apple engineer have access to the source code.
-
-Because of this and the control Apple have over the platform the file structure is easier simpler to understand. 
+Unlike Android device, the IOS system is an closed platform, which only apple engineer have access to the source code. Because of this and the control Apple have over the platform the file structure is easier simpler to understand. 
 
 To speed up the analysis of [ILEAPP](https://github.com/abrignoni/iLEAPP) will help you parse and present some of the information from IOS dump. It important to note that no tool will parse all the data. 
 

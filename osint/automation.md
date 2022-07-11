@@ -25,3 +25,9 @@ marketplace search
 ````
 Will display every module and the current status.
 
+## Scrapping
+
+### DarkScrape 
+
+[Darkscrape](https://github.com/itsmehacker/DarkScrape) is an OSINT tool used for downloading media or images from TOR sites.
+
