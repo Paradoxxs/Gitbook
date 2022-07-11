@@ -12,7 +12,7 @@ Type of data
 * Netflow traffic summary
 * Infrastructure and endpoint logs
 
-### Aqcusition
+### Acquisition
 
 #### TLS (HTTPS) Traffic proxy
 
@@ -113,3 +113,13 @@ Network attribute
 - Functionality
 - Encoding and encryption
 - routines
+
+
+## WIFi
+
+|Term|Explanation|
+|---|---|
+|SSID|Service set identifier, name of the wirelress network|
+|BSSID| Basic service set identifier, unique ID of wireless transmitter|
+|beacon| Announcement from access points broadcasting SSID|
+|probe request| Announcement from client requesting a specific SSID|

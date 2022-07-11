@@ -1,8 +1,37 @@
 ---
-description: Deadbox location for finding evidence
+description: Windows forensics
 ---
 
 # 🖥 Windows
+
+# Analysis
+
+Windows are recording a lot of information about the user activity and preference.
+Most of the information that it records if to increase the usability like highlighting the recently open files, Network connection, etc.
+
+This is a big favour for us as it allow to create an timeline of the activity that have happened on the device.
+
+## Tools
+
+Collection of different tools used to examining different type of windows evidences.
+
+|Tool|description|Link|
+|---|---|---|
+|Registry Explorer|Registry viewer||
+|MFTExplorer| GUI $MFT Viewer||
+|PECmd| Prefetch parser||
+|Shellbags explorer| GUI for browsing shellbags||
+|Volatility| Memory analysis||
+|SQLite browser| Opening SQLite database||
+|Magnet RAM capture| Capturing RAM of live machine||
+|CyLR| Triage imaging||
+|Encryption Disk detection|Check if any disk are encrypted||
+|FKT Imager| Imaging & mounting of disk images||
+|Event log viewer| Examining windows event logs|[link](https://www.nirsoft.net/utils/full_event_log_view.html)|
+|MFTEcmd| cmd tool for export data
+ from $MTF||
+
+
 
 ## **File system**
 
@@ -28,7 +57,7 @@ Where each file gets a 1024 byte long record, if the file is small enough the co
 
 By default, MFT reverse 12.5 % of the disk, if the other 87.5% of the drive become full first then MFT section will be halved.
 
-The 24 first entries are reversed for the NTFS volume, where the 12 first are used to make NTFS work, and hidden unless view by speical tools.
+The 24 first entries are reversed for the NTFS volume, where the 12 first are used to make NTFS work, and hidden unless view by special tools.
 
 #### **Alternate data stream zone identifier (ADS)**
 
@@ -94,6 +123,25 @@ The database entries consist of a key, valuetype, value and last write time (UTC
 
 Transaction log file contain data that have not been written to the registry hive, cache registry data prior to permanently being written to hive file. The cache get flushed at least once per hour or when the system is not being used.
 
+Because registry is a database it difficult to delete values from the registry, the only way to do it, is by overwrite it with new data.&#x20;
+
+
+### Location
+
+* Windows\system32\config : SAM, Security, System, Software, Default
+
+Amcache
+
+* Windows\appcompat\programs\Amcache.hve
+
+User hive
+
+Each user have a registry hive, which record user activity and preference on the machine.
+One of the most critical object to be examined.
+
+* XP: c:\docments and settings\ {username}
+* win 7-10: %userprofile%\appdata\local\microsoft\windows
+
 ### Backup
 
 Backup of the registry are location at C:\Windows\System32\Config\RegBack. backup are made every 10 day.
@@ -102,30 +150,10 @@ Backup of the registry are location at C:\Windows\System32\Config\RegBack. backu
 
 Show the temporal order of values in key from newest to oldest.
 
-#### Deleted registry
-
-Because registry is a database it difficult to delete values from the registry, the only way to do it, is by overwrite it with new data.&#x20;
-
 #### Hive
 
 Contains keys and values And the information about Hardware, user setting, software, system configuration.
 
-#### Registry files
-
-* Windows\system32\config : SAM, Security, System, Software, Default
-
-#### Amcache
-
-* Windows\appcompat\programs\Amcache.hve
-
-#### User hive
-
-Each user have a registry hive, which the specific user activity on the machine.
-
-One of the most critical object to be examined.
-
-* xp: c:\docments and settings\ {username}
-* win 7-10: %userprofile%\appdata\local\microsoft\windows
 
 #### Tools
 
@@ -133,16 +161,11 @@ One of the most critical object to be examined.
 * TZWorks cafae
 
 
-
 ## Event logs
 
-![](https://remnote-user-data.s3.amazonaws.com/DCzzYyePgJqGXxe7LkgOqe\_y4z9KJBIZtaMdblCWN2CeaEQlPHqPtI34hqp0BL2Ub0hSGXQs-k\_ZB5sktuPm16yA4y261bq2F56acW2ct\_taUac\_BwS\_at4lwhdceYHp.png)
+From vista and onward have logging has been enabled by default and started to be a key part of any windows forensic job. Centralized recording of information about software, hardware, OS function and security.
 
-From vista and onward have logging has been enabled by default and started to be a key part of any windows forensic job. Centralized recording of information about software, hardware, OS function and security
-
-There no limitiation to evtx file, but by default the size is set to 20Mb, once it reach the value it will start to overwrite historical events.
-
-Default format for event viewer, it structured as XML format, it was change from vista because it reduced the memory cost of logging.
+There no limitations on evtx file, by default the size is set to 20Mb, once it reach that size it will start to overwrite historical events.
 
 ### Event types
 
@@ -155,7 +178,7 @@ Default format for event viewer, it structured as XML format, it was change from
 * Success audit
   * Audit event completed successfully
 * Failure audit
-  * Audit event did not complete sucessfully
+  * Audit event did not complete successfully
 
 ### Type
 
@@ -164,8 +187,6 @@ Default format for event viewer, it structured as XML format, it was change from
 Most commonly reviewed log in forensics, can only be updated by the LSASS process. Records access control and security settings information.
 
 Records access control and security settings information - Event based on audit and group policies
-
-![](https://remnote-user-data.s3.amazonaws.com/PcQe9i\_trnHg7EfgF4N9aSZK6crmTiMdhcUOP6Z2k5HB99PJ6jhhn8NR-3XESJsrETzEjygsNAJOjUWgqd0MXf43A2mYt1SS7Cqzixowmq146ZFjEIGJ-pJSB18gk\_3K.png) ![](https://remnote-user-data.s3.amazonaws.com/TS97jbOpuhD\_AOEDuK9h9BDvE10dqCVGEIefhXhorjkbpyz9G8hNWAERFfRmurVuDwCTeNGE61iZaYobknDwL7EiKF6ycPAQIWP1UvbhQCG\_iBrmroAkQnZLvAwarZbh.png) ![](https://remnote-user-data.s3.amazonaws.com/cz5sKneMouKWqYCMui0dDADIt6OSRKSuD36z86ZR0krqVZY\_xBoDL0gn85TcCJcF9u4KgKMH1nsPwHySdOvOC0r\_u0TKyFYvS6jwNa8mDD1\_hKCw2Imfuuv1uaGuDUzc.png)
 
 #### System
 
@@ -179,12 +200,6 @@ Software event unrelated to operating systeme.g. sql server fails to access a da
 
 Custom application logs, examples server logs including directory service, DNS server and file replication service.
 
-
-
-
-
-
-
 ### Location
 
 * XP : \windows\system32\config
@@ -193,7 +208,6 @@ Custom application logs, examples server logs including directory service, DNS s
 ### Tools
 
 * Event log Explorer
-
 
 
 ## Memory
@@ -205,26 +219,25 @@ Highly volatile hardware using to stored information that the computer access fr
 Introduced by Microsoft was an energy saving solution, where it will write the data in RAM to disk (hiberfil.sys). It was later restructured in win 10 to fast startup, which reduce the amount of time required for boot, this was done by using hibernation function, by freezing CPU and memory to the hiberfil.sys file.
 
 
-
-* There exists two type of hibernation file full and reduced, Both is a compressed copy of RAM Full occure when the computer hibernation, which happens when battery get to a certain point.
-* There will be created a new smaller hibernation file at reach reboot, to allow for fast startup which is on by default.
+* There exists two type of hibernation file full and reduced, Both is a compressed copy of RAM Full occur when the computer hibernation, which happens when battery get to a certain point.
+* There will be created a new smaller hibernation file at reach reboot, to allow for fast start-up which is on by default.
 
 ![](https://remnote-user-data.s3.amazonaws.com/kAsejjxHq94r3yoA\_LGM7FteJanf0ryxGdPMvDVboSeyvqIKIyhU\_7iArh08Aqe8btPUkocjKVpRYS9ywxcPHae8bwk4cou1oQxjz4r0iPI-p\_wAo-C0kCPGhu8RDua-.png)
 
 #### Tools
 
 Dump memory:\
-F-Response\
-Belkasoft live ram capture\
-Magnet Forensics RAM capture
+- F-Response\
+- Belkasoft live ram capture\
+- Magnet Forensics RAM capture
 
 Decompress:\
-Volatility imagecopy\
-Comae hibr2bin.exe\
-Arsenal Hibernation recon
+- Volatility imagecopy\
+- Comae hibr2bin.exe\
+- Arsenal Hibernation recon
 
 Analysis:\
-Volatility
+- Volatility
 
 #### Data
 
@@ -253,34 +266,35 @@ The precious of the timestamp depends on the file system used.
 
 If modified date is older than created date mean the file or folder have been copied. Does not count for files download from the internet.
 
-* Key location
-  * Hive files
-    * windows\system32\config
-    * %userprofile% - NTUser
-  * Event files
-    * \Windows\System32\winevt\Logs\\
-    * svchost.exe should always be executed from service.
-    * RPD - Security log event ID : 4778 & 4779\
-      Will log the host machine name which initiated the connection
-    * Kerbous
-      * Security log
-      * EventID
-        * 4768 - TGT was granted (successful logon)
-        * 4769 - Service ticket requested(access to server resource) : Once requested can to taken offline for cracking
-        * 4771 - Pre-authentication failed (failed logon)
-    * Network shares
-      * Security log
-      * Off by default
-      * EventID
-        * 5140 - Network share was accessed
-        * 5145 - Shared object accessed
-    * Services
-      * EventID
-        * 7035 - service sent a start or stop control
-        * 7036 - service start or stop
-        * 7040 - start type changed
-        * 7045 - new service installed
+**Key location**
 
+**Hive files**
+* windows\system32\config
+* %userprofile% - NTUser
+
+**Event files**
+* \Windows\System32\winevt\Logs\\
+* svchost.exe should always be executed from service.
+* RPD - Security log event ID : 4778 & 4779\
+  Will log the host machine name which initiated the connection
+* Kerbous
+  * Security log
+  * EventID
+    * 4768 - TGT was granted (successful logon)
+    * 4769 - Service ticket requested(access to server resource) : Once requested can to taken offline for cracking
+    * 4771 - Pre-authentication failed (failed logon)
+* Network shares
+  * Security log
+  * Off by default
+  * EventID
+    * 5140 - Network share was accessed
+    * 5145 - Shared object accessed
+* Services
+  * EventID
+    * 7035 - service sent a start or stop control
+    * 7036 - service start or stop
+    * 7040 - start type changed
+    * 7045 - new service installed
 
 
 ## Shell items

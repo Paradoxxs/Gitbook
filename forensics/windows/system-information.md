@@ -84,3 +84,12 @@ Application Resource Usage Provider C:\Windows\System32\SRU\SRUDB.dat
 ```
 SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
 ```
+
+### Default apps
+
+The default application of the machine.\
+Very useful to identify the web browser that is used.
+
+````
+SOFTWARE\Microsoft\Windows\CurrentVersion
+````

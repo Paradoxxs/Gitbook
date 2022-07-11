@@ -18,7 +18,7 @@ All vaues are ROT-13 encoded
   * 6D809377 : ProgramFilesX64
   * 7C5A40EF : ProgramFIlesX86
   * 1AC14E77 : system
-  * D65231Bo : ssystemX86
+  * D65231Bo : systemX86
   * B4BFCC3A : Desktop
   * FDD39AD0 : documents
   * 374DE290 : Downloads
@@ -26,7 +26,7 @@ All vaues are ROT-13 encoded
 
 Time
 
-* Last run time (UTC) Tool
+* Last run time (UTC)
 * Nirsoft userassistview
 
 ```
@@ -38,7 +38,7 @@ NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\ {GUID}
 Records of recently used application and files in a timeline accessible via "win+tab" key, the data is recorded in sqLite database.
 
 ```
-C:\Users\AppData\Local\ConnectedDevices Platform\ActivitiesCache.db  
+C:\Users\AppData\Local\ConnectedDevicesPlatform\{GUID}\ActivitiesCache.db  
 ```
 
 ### BAM/DAM
@@ -62,7 +62,7 @@ Windows application compatibility database is used by Windows to identify possib
 Any executable run on the Windows system could be found in this key. You can use this key to identify systems that specific malware was executed on. In addition, based on the interpretation of the time-based data you might be able to determine the last time of execution or activity on the system.
 
 * Windows XP contains at most 96 entries - LastUpdateTime is updated when the files are executed
-* Win 7+ contains at most 1,024 entries - LastUpdateTime does not exist on the systems, meaing it can no longer be used to determine last execute time
+* Win 7+ contains at most 1,024 entries - LastUpdateTime does not exist on the systems, meaning it can no longer be used to determine last execute time
 
 Note
 

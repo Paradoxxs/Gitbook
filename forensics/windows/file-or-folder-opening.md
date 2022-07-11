@@ -68,12 +68,12 @@ Reading location
 
 NTUSER : %Userprofile% or HKCU
 
-* NTUSER.DAT\Software\Microsoft\Office\<version>
+* NTUSER.DAT\Software\Microsoft\Office\ {version} \ {program}
   * 14.0 = Office 2010
   * 11.0 = Office 2003
   * 12.0 = Office 2007
   * 10.0 = Office XP
-* NTUSER.DAT\Software\Microsoft\Office\<version>\<program>\UserMRU\<LiveID\_# or ADAL\_#>{FileMRU placeMRU}
+* NTUSER.DAT\Software\Microsoft\Office\ {version} \ {program}\UserMRU\ {LiveID\_# or ADAL\_#} \ {FileMRU placeMRU}
   * 15.0 = Office 365 (2013)
   * 16.0 office 364 (2016)
 
@@ -137,13 +137,13 @@ NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
 
 IE history will also keep track of file opening.
 
-Tools
-
-* NirSoft BrowsingHistoryView
-
 ```
 %appdata%\local\microsoft\windows\webcache\WebCacheV*.dat
 ```
+
+Tools
+
+* NirSoft BrowsingHistoryView
 
 ### Open/save MRU
 

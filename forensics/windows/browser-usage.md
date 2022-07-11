@@ -67,6 +67,28 @@ Cache for web page components to speed up site load time
   * XP: %USERPROFILE%\Local Settings\Application Data\Google\Chrome\User Data\Default\Cache - data\_# and f\_######
   * Win7/8/10: %USERPROFILE%\AppData\Local\Google\Chrome\User Data\ Default\Cache\ - data\_# and f\_######
 
+
+### Browser download manager
+
+little-known fact about the IE History is that the information stored in the history files is not just related to Internet browsing. The history also records local and remote (via network shares) file access, giving us an excellent means for determining which files and applications were accessed on the system, day by day.
+
+Firefox
+
+* XP:
+  * %userprofile%\Application Data\Mozilla\ Firefox\Profiles.default\downloads.sqlite
+* Win7/8/10:
+  * %userprofile%\AppData\Roaming\Mozilla\ Firefox\Profiles.default\downloads.sqlite
+
+Internet Explorer:
+
+* IE6-7
+  * %USERPROFILE%\LocalSettings\History\History.IE5
+* IE8-9
+  * %USERPROFILE%\AppData\Local\Microsoft\WindowsHistory\History.IE5
+* IE10-11
+  * %USERPROFILE%\AppData\Local\Microsoft\Windows\WebCache\WebCacheV\*.dat
+
+
 ## Session restore
 
 Crash recovery
