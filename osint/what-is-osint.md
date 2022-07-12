@@ -19,6 +19,17 @@ Before you begin on your OSINT investigation you need to is an request for infor
 
 **Target profiling / attribution** unmasking an profile online and offline presences, identifying the real person behind online personas.
 
+## Reporting
+
+This is what you gets paid for creating the report of all the information that have been collected and the intelligence analysis you have performed.How the report is structure is up to you. I like the order of:
+* Request for information
+* Conclusion
+* Analysis
+  
+This structure will allow the reader to quickly see what was the information request and the conclusion, if they want to dive into hwo we got into the conclusion they can do so in the analysis part. 
+
+
+Archive the investigation so it does not get mixed in with future work. One way to do if working from an VM is to create an snapshot, which you can return if need to continue the investigation.
 
 ### OSINT cycle
 
