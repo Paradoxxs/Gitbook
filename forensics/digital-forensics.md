@@ -7,8 +7,6 @@ description: >-
 
 # Digital forensics
 
-## Overview
-
 Digital forensics is a branch of forensics science encompassing the recovery and investigation of material found in digital devices, often in relation to computer crime. So, Forensics is the technical process of recovering or collecting evidence that will be used in an investigation. In regards to Security Operations, this discipline is often associated with monitoring of employees to maintain a high-security posture, aiding with incident response to reveal details of how a compromise occurred and any post-actions (known as DFIR), as well as other tasks which require a ‘deep-dive’ into technical aspects.
 
 Digitial forensic expert help to identify the:
@@ -26,8 +24,6 @@ Digitial forensic expert help to identify the:
 
 
 ## Type of forensics
-
-
 
 #### Data artifact
 
@@ -84,6 +80,14 @@ If this process is not followed properly, the evidence collected may be rendered
 Forcing prosecutors to take such a professional and cautious approach to evidence collection and storage, ensures that evidence is accurate, and has not been tampered with, so justice can be achieved. \
 It is important to have a record of who collected a piece of evidence, and who has been responsible for it since it was collected. \
 This means if anything happens to it, the person assigned can be held accountable.\
+
+## Investigative plan
+
+The goal of having an investigation plan is not to mindlessly during full forensics of the device. Instead to an clear outcomes and an process to arrive at that outcome.
+
+Have clearly define hypotheses that you are seeking out to prove or disprove. 
+Once you have define that. The next step is to create an roadmap for you to follow where the you think the relevant information will be.
+
 
 
 ## Evidence
