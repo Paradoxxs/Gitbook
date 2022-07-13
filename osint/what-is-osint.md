@@ -13,11 +13,43 @@ It important before you even start your journey into OSINT that you have your me
 
 ## Methodology
 
-An set of procedure to help you perform an OSINT investigation. 
+### preparing
 
-Before you begin on your OSINT investigation you need to is an request for information (RFI). This question can come in many forms some of the more common once are **Threat assessments** monitoring of group or individual what their capability and intent. 
+Before you even begin you need to prepare to work environment. Identify and organize your resources so they are ready for action. It will also allow you to identify if you are missing sources of information.
+Setting up sock puppet account on the different social media and forums.
+
+
+### Request for information
+
+An set of procedure to help you perform an OSINT investigation.
+
+Before you begin on your OSINT investigation you need to is an request for information (RFI). This question can come in many forms some of the more common once are **Threat assessments** monitoring of group or individual what their capability and intent. It also allow you to set clear expectations with the customer.
 
 **Target profiling / attribution** unmasking an profile online and offline presences, identifying the real person behind online personas.
+
+### Planning
+
+Assessing the current situation, planning the approach that will yield the best result and answer the question set forth by the customer. Allowing you to move forward with a purpose rather than just whack-a mole through the internet.
+
+To make this step easier, it an good idea for how an set of workflow that describe how you are going to conduct an investigation based on the information available. E.g IP address what tools, tactics and procedure do you have for gathering additional information.
+
+### Documentation
+
+Now is a good stage to start the documentation processes.
+Documentation is key, you never know if the information get removed or the sites get taken down, Or you might simply not being able to to find the information again.&#x20;
+
+Create your workspace for the specific case. Help you ensure that the difference cases your are working on does not get mixed up. Start by adding the communication the lead up to the request and the agreed upon request for information.
+
+One product might not be enough to do everything. I like to use multiple tools. Note taking application, graph drawing program allow you to visualize information. Some of the common once are Microsoft OneNote, xmind,  
+
+Tools
+* hunch.ly
+* Microsoft steps recorder
+* Windows gaming recording (win+g)
+* FastStone
+* Snagit
+* OneNote
+* Xmind
 
 ## Reporting
 
@@ -26,7 +58,7 @@ This is what you gets paid for creating the report of all the information that h
 * Conclusion
 * Analysis
   
-This structure will allow the reader to quickly see what was the information request and the conclusion, if they want to dive into hwo we got into the conclusion they can do so in the analysis part. 
+This structure will allow the reader to quickly see what was the information request and the conclusion, if they want to dive into how we got into the conclusion they can do so in the analysis part. 
 
 
 Archive the investigation so it does not get mixed in with future work. One way to do if working from an VM is to create an snapshot, which you can return if need to continue the investigation.
@@ -50,16 +82,7 @@ Pivoting & reporting
 
 * pivoting data to other data, and reporting the data to the customer.
 
-## Documentation
 
-Documentation is key, you never know if the information get removed or the sites get taken down, Or you might simply not being able to to find the information again.&#x20;
-
-* Tools
-  * hunch.ly
-  * Microsoft steps recorder
-  * Windows gaming recording (win+g)
-  * FastStone
-  * Snagit
 
 ## Securing yourself&#x20;
 

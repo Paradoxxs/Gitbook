@@ -67,6 +67,7 @@
   * [Email](osint/sources/email.md)
   * [Threat intel](osint/sources/threat-intel.md)
   * [Breach & leaks](osint/sources/breach-and-leaks.md)
+  * [Username](osint/sources/Username.md)
 
 ## ⚙ Reverse engineering
 

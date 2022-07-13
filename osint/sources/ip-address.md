@@ -1,10 +1,12 @@
 # IP address
 
-IP address are
+Internet protocol (IP) purpose is to handle transmissions of packets between network end point, Host identify with a unique address. Using the OSI layer 3.
 
-I quickly goes to [ipinfo](https://ipinfo.io/) because it can identify alot of information about the IP address.
+IP is a unique number that that reference to a computer.
+IPv4 is a 32-bit limit to 4.294.967.296, because of this limit NAT have been developed to allowing more computers on the internet.
+IPv6 is a 128-bit where the limit is 3.4 x 10↑34
 
-
+When it comes to analysis IP addresses. I quickly go to [ipinfo](https://ipinfo.io/) because it can identify a lot of information about the IP address.
 
 
 ## WhoIs
@@ -31,6 +33,12 @@ Bing search engine can also be used to identify domains hosted on a ip address. 
 Does a everything from identifying location, VPN, Service, domains and etc.
 
 [bing.com/search?q=ip%3a+204.93.177.100](https://www.bing.com/search?q=ip%3a+204.93.177.100)
+
+Will only identify one domain, if multiple domain are hosted on the same IP use the tools above. 
+
+````cmd
+nslookup {ip address}
+````
 
 ## IP location
 It possible to cross-locate an IP address.

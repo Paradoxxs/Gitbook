@@ -100,12 +100,10 @@ Entry for every executable run, full path information, Files $StandardInfo Last 
 * SHA1 hash of executable also contained in the key.
 * Value name are in hex from 0 to 17, 100 and 101 corresponding to a name ![](https://remnote-user-data.s3.amazonaws.com/BJmFS6dKo-ItyK1qQCSxnJQcW6tqIHTAGEwI02jHF7A8sY763OSmPQGXPTEDzW98xQ446FJx6MtlxIvCm6mAOhdYMHUy3CCuq1ixOo3pvdxqzV6HGUdIqF9wVhcyiQ4L.png)
 
-time
 
 * First run time = last modification time of key
 
 Tool
-
 * amcacheParser
 
 ```
