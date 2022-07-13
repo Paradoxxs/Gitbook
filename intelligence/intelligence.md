@@ -4,8 +4,6 @@ description: What is intelligence
 
 # Intelligence
 
-
-
 The goal of threat intelligence is to gather, evaluate and analysis data related to an threat actor.\
 with the goal to create better insight to the tactic technique and procedure (TTP), so that policy makers can make better decisions on how to mitigate risk.
 
@@ -55,11 +53,10 @@ Data in a vacuum, without context, is difficult to interpret and understand, whi
 ![](../.gitbook/assets/image.png)
 
 
-
 #### Collection management framework
 
-Datasheet that explain the source of informations, what we can expect from them, and the question they can help us answer.\
-More importantently identify where you are missing sources of information.&#x20;
+Datasheet that explain the source of information's, what we can expect from them, and the question they can help us answer.\
+More importantly identify if you are missing sources of information.&#x20;
 
 
 
@@ -80,7 +77,7 @@ Assessment of the treat TTP based on the data collected.
 Everyone has bias, it the human brain trying to simplify information around us.
 it important for an analyst to be aware of their own bias, allowing you to counter your biases the effect on your analysis.
 
-Which is why the CTI team, need to be compromised of multiple different type of people, with diffeence experience and backgrounds to combat their biases.
+Which is why the CTI team, need to be compromised of multiple different type of people, with difference experience and backgrounds to combat their biases.
 
 Cognitive bias [24 Cognitive Biases stuffing up your thinking](https://yourbias.is/)
 

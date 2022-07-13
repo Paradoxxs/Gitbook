@@ -16,7 +16,7 @@ Format
 - Sqlite
 - Plist
   
-### Application sandboxing 
+### Application sandboxing
 Apple uses sandboxing to ensure if you download an malicious application.
 This will limit the amount of interaction the app can do with the system. 
 Enables the user to interact with an application without accessing the file system, by containing within a specific container.
@@ -70,9 +70,9 @@ Bit by bit access to the device, not possible because of security
 
 ## Analysis
 
-Unlike Android device, the IOS system is an closed platform, which only apple engineer have access to the source code. Because of this and the control Apple have over the platform the file structure is easier simpler to understand. 
+Unlike Android device, the IOS system is an closed platform, which only apple engineer have access to the source code. Because of this and the control Apple have over the platform the file structure is easier simpler to understand.
 
-To speed up the analysis of [ILEAPP](https://github.com/abrignoni/iLEAPP) will help you parse and present some of the information from IOS dump. It important to note that no tool will parse all the data. 
+To speed up the analysis of [ILEAPP](https://github.com/abrignoni/iLEAPP) and [APOLLO](https://github.com/mac4n6/APOLLO) will help you parse and present some of the information from IOS dump. It important to note that no tool will parse all the data.
 
 E.g. Application that not parsed it up to the analysis. To understand the structure of the tables within database, and the context around the information within the application.
 

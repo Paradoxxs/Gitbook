@@ -88,3 +88,20 @@ Event Id:
 ```
 Window\System32\winevt\logs\Security.evtx
 ```
+
+### WordWheelQuery
+
+Stores user search history for explorer and start menu
+
+````
+NTUSER.DAT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\WordWheelQuery
+````
+
+### Typed path
+
+Stores the typed path in the explorer addressbar
+
+````
+NTUSER.DAT\\software\\microsoft\\windows\\CurrentVersion\\Explorer\\TypedPaths
+````
+
