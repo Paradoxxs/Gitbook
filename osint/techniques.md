@@ -8,6 +8,15 @@ The process here is to use a clean phone and adding the phone number of the susp
 
 Which will give you more data to pivot off.
 
+### Forgot password
+
+Many sites have an second factor for recovery your account. This can be phone number, additional email, etc. 
+What you can do is if you know your target have an account on a site and their username or email. 
+You can try the *forgotten password* options, some sites might reveals the entire second factor or just an part of the it. 
+If you do this on multiple sites you should be able to identify additional information about the target. 
+
+Be aware that this might alert the user that something wrong is going on.
+
 ### Trace route
 
 When doing IP geo location on user IP address is can be very difficult to any kind of mening full preciession because the user get assinged a random IP address by DHCP.\
