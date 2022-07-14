@@ -54,18 +54,9 @@ It common for multiple domains to be tied to a single IP address, with DNS queri
 
 
 
-## Technology
-
-Every website or service is built upon an technology, This is where [BuiltWith](https://builtwith.com/) comes into play, it will try to identify the technology used on the site.
-
-[blacklight privacy inspector](https://themarkup.org/) will look into the website and notify of privacy invasive activity.
-
-When you visit an website you might have notices an icon in the tab bar. This is called an favicon. you are able to find other site which have the same favicon to identify other sites.
-Before you start you have you calculate the hash value of the icon this is done with [faviconhash](https://faviconhash.com/).
-The next step is to query the hash value on [shodan.io](https://www.shodan.io) using the query **http.favicon.hash:{hash}**
 
 
-
+# Website
 
 ## Domain analytics
 
@@ -120,6 +111,7 @@ You might be interested in if an website changes it appears over time. This is w
 
 ## Web archive
 
+
 Record websites in order to preserve websites, allowing one to look back in time to see how the internet have changed over time.
 
 [archive.org wayback machine](https://archive.org/)
@@ -127,7 +119,20 @@ Record websites in order to preserve websites, allowing one to look back in time
 [archive.ph](https://archive.ph/)
 
 
-## Web exploration
+## Technology
+
+This section is about identify the technology that are used to built the website.
+The majority of moden website run on content management system (CMS). The information can be used to identify lingering files that can allow one to discover of information. 
+
+Every website or service is built upon an technology, This is where [BuiltWith](https://builtwith.com/) comes into play, it will try to identify the technology used on the site.
+
+[blacklight privacy inspector](https://themarkup.org/) will look into the website and notify of privacy invasive activity.
+
+When you visit an website you might have notices an icon in the tab bar. This is called an favicon. you are able to find other site which have the same favicon to identify other sites.
+Before you start you have you calculate the hash value of the icon this is done with [faviconhash](https://faviconhash.com/).
+The next step is to query the hash value on [shodan.io](https://www.shodan.io) using the query **http.favicon.hash:{hash}**
+
+### Web exploration
 
 Detection of security flaws or forgotten pages, etc. 
 
@@ -154,7 +159,111 @@ default scan
 wpscan --url example.tld
 ````
 
+## Directory & subdomain hunting
 
-## subdomains
+This section is about finding hidden information within websites. 
 
+You will at some point be trying identifying additional information from an website one way to hit goal is done by identifying hidden or forgotten directory, subdomains.
+
+One of the simplest way is to use an wordlist of common directory or subdomains. 
+The other options is brute-forcing and crawling the site.
 Subdomains are used to organize different sections of an website. There is no limits to the amount of subdomains you can have. There are tools can be used to perform dictionary attack against an site to identify subdomains.
+
+
+### Gobuster
+
+[Gobuster](https://github.com/OJ/gobuster) web brute-forcing tool for directory, subdomains, etc.
+
+Iterater over an wordlist to check if directory is available on the website.
+```
+gobuster dir -w {wordlist.txt} -u [url]
+```
+
+Iterate over an wordlist to check if the subdomain is valid.
+```
+gobuster dns -w {wordlist.txt} -u [url]
+```
+### Dirhunt
+
+[Dirhunt](https://github.com/Nekmo/dirhunt) web crawler for searching and analyzing directory within web application. It not an classic crawler instead of making request to the server. It will instead check other sources such as google, virus total to identify files and directories.
+
+```
+dirhunt example.tld
+```
+
+using the *-e* switch will allow you to look for specific files, that can give you access to forgotten files. 
+
+```
+dirhunt example.tld e zip,sh,z7
+```
+
+With some luck you might identify files like backups, config, and log files. 
+
+If you want to be more specific you can use the *-f* switch
+
+```
+dirhunt example.com -f wp_admin,/etc/passwd
+```
+### Wfuzz
+
+[wfuzz](https://github.com/xmendez/wfuzz) is a web fuzzer that will brute-force website web application.
+It very similar to dirhunt that we will be using an wordlist to try and identify directory, files, subdomains, etc. 
+The way wfuzz works that is will replace any mention of FUZZ by the given payload. 
+wfuzz comes with a wordlist called *big.txt* which can be used to identify a lot of files and directories. 
+
+
+directory fuzzing
+```
+wfuzz -w worldlist.txt -hc 404 example.tld/FUZZ
+```
+
+Subdomain searching
+```
+wfuzz -w worldlist.txt -hc 404 FUZZ.example.tld/
+```
+
+Only your imagination is the limit to what wfuzz can do for you. e.g. fuzzing wordpress upload directory for hidden files.
+
+
+### Photon 
+
+[Photon](https://github.com/s0md3v/Photon) is a web crawler and data extraction program designed for OSINT. 
+It can easily to used to extract information from a website like names, emails documents, subdomains, API keys, etc. 
+
+Another great feature of photon is their plugins what can gather information from third-party sites such as web archive like wayback machine.
+
+The simplest web crawl 
+
+```
+python photon.py -u example.tdl
+```
+
+One identify using the *--clone** switch will take the sites and save a copy. 
+
+```
+python photon.py -u example.tdl --clone
+```
+
+Another feature of Photon is crawling DNS and subdomains using the *--dns* switch allowing you to capture the structure of the site and subdomain in one command.
+
+
+```
+python photon.py -u example.tdl --dns
+```
+
+
+This is all fine if you have a simple list, but if you get met with a larger sites, such as message boards. You might need to modify the scanning you can do that with the *-t* switch which will specific the amount of threads to use and *-d* to specify the depth of the search.
+
+```
+python photon.py -u example.tdl -t 5 -d 10
+```
+
+To scrape web archive from wayback machine you need to include the *-wayback* switch.
+
+```
+python photon.py -u example.tdl --wayback
+```
+
+## Intrigue.io
+
+[Intriguq-io](https://github.com/intrigueio/intrigue-core) -WIP-

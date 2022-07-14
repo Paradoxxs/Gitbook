@@ -2,6 +2,8 @@
 description: >-
   Because of the vast amount of information on the internet, it an good idea to
   automate the task that is frequently done.
+
+  This section is for automation tools that does not fit into only a single source.
 ---
 
 
@@ -64,7 +66,5 @@ It requires an SQL server to function.
 [Darkscrape](https://github.com/itsmehacker/DarkScrape) is an OSINT tool used for downloading media or images from TOR sites.
 
 [Skiptracer](https://gitlab.com/illwill/skiptracer)
-
-[Photon](https://github.com/s0md3v/Photon)
 
 [Scrapy](https://scrapy.org/) Will allow you to create your own web scraper.
