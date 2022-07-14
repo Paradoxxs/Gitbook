@@ -211,9 +211,9 @@ ntuser.dat\Software\microsoft\windows\CurrentVersion\Search\RecentApps
 
 ### Prefetch
 
-increasing the performance of the system by pre-loading code pages. The cache manager monitors all files and directories and maps them into a .pf file, which is utilized to show application execution.
+Prefetch increases the performance of the system by pre-loading code pages. The cache manager monitors all files and directories and maps them into a .pf file, which is utilized to show application execution.
 
-It disables on system with SSD, otherwise enabled by default, on win10+ are the files are compressed.
+In the beging of win7 it was disables on system with SSD, buy was later enable again because of the performance boot, on win10+ are the files are compressed.
 
 Analysis
 
