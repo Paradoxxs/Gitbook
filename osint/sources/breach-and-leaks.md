@@ -41,3 +41,9 @@ It a free service with API.
 
 There exists sites which collect, index and make it searchable for an price. 
 Look at threat intel page to identify sites that provides this kind of data.
+
+# Doxing
+
+The process of finding and releasing the information to the public on an person.
+
+[doxbin](https://doxbin.com/) collects dox from multiple sites, index and make it searchable for you.

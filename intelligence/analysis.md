@@ -1,11 +1,21 @@
 # Analysis
 
-Analysis is detailed examiniation of element, by breaking something down into its parts to better understand how it operate.
+Analysis is detailed examination of element, by breaking something down into its parts to better understand how it operate.
 
 This is what we do with incident and threat actors, we try to deconstruct it down to understand how they operate.
 
-The other part we do is synthesis of information by taking different pieces of information and putting whem together to get an better picture of the actor.
-an example could be multiple intrusions we put together to find overlapping peices of information.
+The other part we do is synthesis of information by taking different pieces of information and putting when together to get an better picture of the actor.
+an example could be multiple intrusions we put together to find overlapping pieces of information.
+
+
+## Scientific process
+
+When doing analysis always use the scientific process. You do not analysis all the information and determine what questions can be answered based on it.
+
+1. Start by first creating an clearly defined hypotheses.
+2. Create an roadmap what information you need and how you will analysis the information.
+3. 
+
 
 ## Analysis judgement
 The core product of the analysis is to make an judgement based on the information that available to them, and not based on other analysis.
@@ -18,7 +28,7 @@ There are many type of analysis and have their own way of working with informati
 ### Data-driven
 
 Accuracy is based on the dataset completeness, logical driven.
-requirest good dataset and straightforward problems.
+request good dataset and straightforward problems.
 
 ### Conceptually driven
 
@@ -37,7 +47,7 @@ Display the information in an visual way to tell the story of the information.
 ## Mental models
 
 Mental models are frame of reference or mindsets that people have adopted. That are formed from experience.
-It helps people to work with vast amount of information. It allows the analysis to make quick work of information because it something they have seen many times before, One of the downfall of mental models is analyst might make assussment about the data and not identify key information.
+It helps people to work with vast amount of information. It allows the analysis to make quick work of information because it something they have seen many times before, One of the downfall of mental models is analyst might make assumption about the data and not identify key information.
 
 ## Structured analysis
 
