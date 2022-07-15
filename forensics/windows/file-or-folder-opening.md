@@ -1,6 +1,6 @@
-# File or folder opening
+# File and folder opening
 
-### Recent files
+## Recent files
 
 Registry key that will track the last files and folders opened.
 
@@ -20,14 +20,33 @@ Folder
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs 
 ```
 
-### Shortcut files
+## Shortcut files
+
+.lnk are automatically created by windows in the recent folder when opening local or remote files or documents.
+Each user have their own recent folder.
+There is a limit of 149 files and folder LNK files in the recent directory.
+
+Tool
+* LeCMD
+
+
+**Analysis**
+
+There can not exists two lnk files of the same name in different location.
+which is why the creation timestamp is the first time an file of that name was opened.
+Modification date is the last time an file with that name was opened.
+
+The information inside the lnk only points to the last file that was opened.
+
+lnk files contains additional information inside them such as:
+* External device information (Name,Type and serial number)
+* Network share information
+* Name of the system
 
 Any non-executable will generate two lnk files.
+* Target file
+* parent folder of the target file
 
-* 1 = target file
-* 2 = parent folder of target file
-
-There is a limit of 149 files and folder LNK files in the recent directory.
 
 XP:
 
@@ -35,7 +54,7 @@ XP:
 C:\%USERPROFILE%\Recent 
 ```
 
-Win7/8/10:
+Win7+:
 
 ```
 %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\
@@ -45,7 +64,8 @@ Win7/8/10:
 %USERPROFILE%\AppData\Roaming\Microsoft\Office\Recent\
 ```
 
-### Prefetch
+
+## Prefetch
 
 Increases performance of a system by pre-loading code pages of commonly used applications. Cache Manager monitors all files and directories referenced for each application or process and maps them into a .pf file. Utilized to know an application was executed on a system.
 
@@ -57,9 +77,11 @@ Increases performance of a system by pre-loading code pages of commonly used app
 C:\Windows\Prefetch 
 ```
 
-### Office recent files
 
-MS office programs track recent files
+
+## Office recent files
+
+MS office programs track recent files. It track the recent open files by that application
 
 Reading location
 
@@ -81,7 +103,7 @@ Time
 
 * Windows 64 hex value - big endian
 
-### Office recent reading location
+## Office recent reading location
 
 Stores the information of the last reading location for the recent file opened by the user.
 
@@ -93,7 +115,7 @@ Timestamp
 NTUSER.dat\SOFTWARE\Microsoft\Office\16.0\Word\Reading Locations\
 ```
 
-### Shell bags
+## Shell bags
 
 Which folders were accessed by the user on the local machine, network, and removable device. User-specific Windows folder and viewing preferences to Windows explorer.
 
@@ -133,7 +155,7 @@ NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU
 NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
 ```
 
-### IE History
+## IE History
 
 IE history will also keep track of file opening.
 
@@ -145,7 +167,7 @@ Tools
 
 * NirSoft BrowsingHistoryView
 
-### Open/save MRU
+## Open/save MRU
 
 Tracks file that have been opened or saved within a windows shell, will be tracked by file extension.
 

@@ -2,7 +2,7 @@
 
 
 
-### UserAssist
+## UserAssist
 
 List GUI-based program executed by specific user. Uses GUID folder structured.
 
@@ -33,7 +33,7 @@ Time
 NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\ {GUID}\Count  
 ```
 
-### Win 10 timeline
+## Win 10 timeline
 
 Records of recently used application and files in a timeline accessible via "win+tab" key, the data is recorded in sqLite database.
 
@@ -41,7 +41,7 @@ Records of recently used application and files in a timeline accessible via "win
 C:\Users\AppData\Local\ConnectedDevicesPlatform\{GUID}\ActivitiesCache.db  
 ```
 
-### BAM/DAM
+## BAM/DAM
 
 Windows background activity moderator (BAM). Desktop activity moderator (DAM).
 
@@ -55,7 +55,7 @@ SYSTEM\CurrentControlSet\Services\bam\UserSettings\{SID}
 SYSTEM\CurrentControlSet\Services\dam\UserSettings\{SID}
 ```
 
-### Shimcache - application compatibility
+## Shimcache - application compatibility
 
 Windows application compatibility database is used by Windows to identify possible application compatibility challenges of execution.
 
@@ -90,9 +90,9 @@ Win7/8/10:
 HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache  
 ```
 
-### amcache.hve
+## amcache.hve
 
-ProgramDataUpdater (a task associated with the Application Experience Service) uses the registry file Amcache.hve to store data during process creation. Amcache.hve – Keys = Amcache.hve\Root\File{Volume GUID}#######
+ProgramDataUpdater (a task associated with the Application Experience Service) uses the registry file Amcache.hve to store data during process creation. Amcache.hve – Keys = Amcache.hve\Root\File{Volume GUID}#####
 
 Entry for every executable run, full path information, Files $StandardInfo Last Modification Time, and Disk volume the executable was run from
 
@@ -116,7 +116,7 @@ Key:
 amcache.hve\Root\File\{Volume GUID}\#
 ```
 
-### System resource usage monitor (SRUM)
+## System resource usage monitor (SRUM)
 
 Records 30 to 60 days of historical system performance. Applications run, user account responsible for each, and application and bytes sent/received per application per hour.
 
@@ -132,9 +132,18 @@ Tools
 C:\Windows\System32\SRU\SRUDB.dat
 ```
 
-### Jump List
+## Jump List
 
-Analysis
+With windows 7 Microsoft introduced the jump list. Which track the recent files opened by that application.
+The files inside the AutomaticDestinations are database folders.
+The naming convention of jump list files is {AppID}.AutomaticDestinations-ms.
+
+Where each version of an application have it own app id. [EZJumpList](https://dfir.to/EZJumpList) host a list of the common application and version and its corresponding app id.
+
+
+**Analysis**
+
+The larger the file is the more frequent the application is used.
 
 * Every steam is an shell-item, steam are separate LNK files
 
@@ -146,10 +155,8 @@ Last time of execution of application w/file open.
 
 * Modification Time = Last time item added to the AppID file.
 
-MRU
 
-* Order by how recent the file was open
-* List of Jump List IDs -> [https://dfir.to/EZJumpList](https://dfir.to/EZJumpList)
+
 
 Tools
 
@@ -159,11 +166,12 @@ Tools
 * jmp - TZWorks
   * Parse both automatic and custom files
 
+
 ```
-C:\%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
+%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
 ```
 
-### Last-visited MRU
+## Last-visited MRU
 
 Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application. Example: Notepad.exe was last run using the C:%USERPROFILE%\Desktop folder
 
@@ -179,7 +187,7 @@ Win7/8/10:
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\ LastVisitedPidlMRU
 ```
 
-### RUN box execution
+## RUN box execution
 
 Commands typed in RUN box.
 
@@ -187,7 +195,7 @@ Commands typed in RUN box.
 NTuser.dat\software\microsoft\windows\CurrentVersion\Explorer\RunMRU
 ```
 
-### RecentApp
+## RecentApp
 
 Track execution of GUI based application and recent file opened by that application. Can also be used to track usage of remote desktop and the destination.
 
@@ -209,7 +217,7 @@ Time
 ntuser.dat\Software\microsoft\windows\CurrentVersion\Search\RecentApps
 ```
 
-### Prefetch
+## Prefetch
 
 Prefetch increases the performance of the system by pre-loading code pages. The cache manager monitors all files and directories and maps them into a .pf file, which is utilized to show application execution.
 
@@ -222,10 +230,9 @@ Analysis
 * date created - first executed
 * Each .pf will include last time of execution, number of times run, and device and file handles used by the program
 
-Limitation
-
-* vista and win7 - max 128 files
-* win8/10 - max 1024 files
+Limitation:
+* vista and win7: max 128 files
+* win8+: max 1024 files
 
 Tools
 
@@ -236,7 +243,7 @@ Tools
 Window\prefetch\layout.ini 
 ```
 
-### RecentDocs
+## RecentDocs
 
 Registry Key that will track the last files and folders opened and is used to populate data in “Recent” menus of the Start menu, It the MRUlist that is used to create the order in which files are opened.
 
@@ -244,7 +251,7 @@ Registry Key that will track the last files and folders opened and is used to po
 Software\microsoft\windows\currentverion\explorer\recentdocs
 ```
 
-### LastVisitedMRU
+## LastVisitedMRU
 
 Tracks application used to open files in OpenSavMRU and the file path. Track the specific executable used by an application to open the files documented in OpenSaveMRU key.
 

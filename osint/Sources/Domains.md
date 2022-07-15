@@ -264,6 +264,17 @@ To scrape web archive from wayback machine you need to include the *-wayback* sw
 python photon.py -u example.tdl --wayback
 ```
 
-## Intrigue.io
+### Intrigue.io
 
 [Intriguq-io](https://github.com/intrigueio/intrigue-core) -WIP-
+
+
+## Documents
+
+Documents are frequently hosted on websites. When you create an document with words and similar tools is will embed information about the user to the document metadata.  The metadata of these documents frequently not purged when uploaded to website. Allowing us to extract the information and identify information about the organization. Such as username, email, software, etc.
+
+### FOCA
+
+[FOCA](https://github.com/ElevenPaths/FOCA) is an Windows GUI tool used automate the process of finding additional domains and documents, extract and parse the metadata. The goal of FOCA is to identify as many document as possible using search engines. Once they have been identified they are downloaded and the metadata is extracted and the information analyzed.
+The goal is to identify information about the organization like usernames, email, software, etc.
+To get the most out of FOCA you need provide FOCA with Google and Bing API keys. Otherwise you will be hit will HTTP error code 429 to many request.

@@ -1,5 +1,15 @@
 # Network activity
 
+
+## Network mapping
+
+Will list any network shares that have been mapped by the user.
+
+```
+NTUSER.dat\software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2
+```
+
+
 ### Network history
 
 History of connected network.\
@@ -26,7 +36,6 @@ SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Managed
 SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged
 ```
 
-###
 
 ### WLAN event log
 

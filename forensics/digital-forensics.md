@@ -15,6 +15,15 @@ Digitial forensic expert help to identify the:
 * Means - The tools and method used
 * Opportunity - How and when the activity was performed.
 
+
+## Digital investigation plan
+
+Using the scientific method for forensics.
+Before you begin any forensic investigation you need to have an clear question that you are seeking out to answer.
+The next step is to create an plan how what are you doing to investigate and how are you going to analysis the data.
+
+Take all the information you found and list out the information the prove or disprove the question you are trying to answer.
+
 #### What is forensically sound
 
 * Consistent

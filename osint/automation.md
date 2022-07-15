@@ -52,12 +52,9 @@ Recon-ng will perform a lot of web request, if you want to hide that the request
 
 [FinalRecon](https://github.com/thewhiteh4t/FinalRecon) automatic web recon tool. Will quick analysis an website using multiple methods. The original goal of the tools was for penetration testing.
 
-# FOCA 
 
-[FOCA](https://github.com/ElevenPaths/FOCA) is used to find metadata and hidden information in documents that it scans.
-It uses the common search engines to identify documents. That is downloaded and analysis the metadata of the documents.
-FOCA is capable to analysis an wide variety of documents.  
-It requires an SQL server to function.
+
+
 
 ## Scrapping
 

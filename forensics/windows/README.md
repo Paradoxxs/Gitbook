@@ -1,5 +1,5 @@
 ---
-description: Windows forensics
+description: Windows forensics, all the information is only up to windows 10. Windows 11 have any been researched yet.
 ---
 
 # 🖥 Windows
