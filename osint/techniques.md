@@ -67,3 +67,8 @@ Tools such as sodan.io can be used to search for site with similar favicon or fa
 sodan.io query :  **http.favicon.hash:{hash}**
 
 **Analytic id** Looking for website that have the same google analytics ID.
+
+
+## Phishing site path traversal
+
+Phishing sites are often an part of a phishing kit. And by doing path traversal you might be able to access to phishing kit configuration file gaining additional information about the target.

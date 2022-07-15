@@ -117,17 +117,22 @@ NTUSER.dat\SOFTWARE\Microsoft\Office\16.0\Word\Reading Locations\
 
 ## Shell bags
 
-Which folders were accessed by the user on the local machine, network, and removable device. User-specific Windows folder and viewing preferences to Windows explorer.
+Record which *folders* were accessed by the user on the local machine, network, and removable device. 
+Record user folder and viewing preferences to Windows explorer.
 
-Analysis
+Can be used to identify access time of folder and pinpoint deleted folder
 
-* Key items
-  * MRUListEX
-    * Directory was accessed at that time
-  * Devices
-    * fat32 : sequence number null
-    * NTFS : sequence number exists
-* Mimic the tree structure of the explorer
+**Analysis**
+The register structure mimic the tree structure of explorer.
+Where bagMRU\0 is equal to my computer. And BagMru\0\ # is the drive letter by opening the register value data and viewing as ascii of you can identify the drive letter. And so it continues to be mapped.
+
+By identifying the folder that have MRUListEX indicator you can assess when the directory was accessed.
+
+
+* Devices
+  * fat32 : sequence number null
+  * NTFS : sequence number exists
+
 
 Tools
 
@@ -135,18 +140,22 @@ Tools
 * SBEcmd
 * sbag
 
+
+**Explorer access:**
+
+USRCLASS.dat location:
 ```
-%userprofile%\AppData\Local\Microsoft\Windows\
+%userprofile%\AppData\Local\Microsoft\Windows\ 
 ```
 
 ```
 USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\Bags 
 ```
-
 ```
 USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\BagMRU
 ```
 
+**Desktop access:**
 ```
 NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU
 ```
@@ -154,6 +163,8 @@ NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU
 ```
 NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
 ```
+
+
 
 ## IE History
 
@@ -175,3 +186,70 @@ Tracks file that have been opened or saved within a windows shell, will be track
   * NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU
 * Win7/8/10
   * NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDlMRU
+
+
+
+
+## Jump List
+
+With windows 7 Microsoft introduced the jump list. Which track the recent files opened by that application.
+The files inside the AutomaticDestinations folder are databases of shell items. Because it an database file deleting the entries from the database is difficult.
+The naming convention of jump list files is {AppID}.AutomaticDestinations-ms.
+
+Where each version of an application have it own app id. [EZJumpList](https://dfir.to/EZJumpList) host a list of the common application and version and its corresponding app id.
+
+There are also custom destinations which are an optional feature developer can enable for their application.
+What it records is up to the developer. They follow the same naming convention as AutomaticDestination with {AppID}.CustomDestinations-ms.
+e.g. Firefox custom entries tracks new tabs, opening of browser, if the user was private browsing, sites.
+
+**Analysis**
+
+The larger the file is the more frequent the application is used.
+
+* Every steam is an shell-item, steam are separate LNK files
+
+First time of execution of application.
+
+* Creation Time = First time item added to the AppID file.
+
+Last time of execution of application w/file open.
+
+* Modification Time = Last time item added to the AppID file.
+
+Can be used to track remote desktop usage and recent destinations.
+
+
+Tools
+
+* AutomaticDestination : MiTec Structured storage viewer
+  * Export stream to save lnk file (right-click on stream)
+* JLECmd - dump out all lnk files.
+* jmp - TZWorks
+  * Parse both automatic and custom files
+
+
+AutomaticDestination:
+```
+%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
+```
+
+CustomDestinations:
+```
+%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations
+```
+
+## Last-visited MRU
+
+Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application. Example: Notepad.exe was last run using the C:%USERPROFILE%\Desktop folder
+
+XP:
+
+```
+NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedMRU
+```
+
+Win7/8/10:
+
+```
+NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\ LastVisitedPidlMRU
+```

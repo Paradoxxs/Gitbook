@@ -1,12 +1,15 @@
-# Program & file execution
+# Program execution
 
 
 
 ## UserAssist
 
-List GUI-based program executed by specific user. Uses GUID folder structured.
+List GUI-based program executed by the specific user and the run count. 
+Organized by application GUID.
 
-All vaues are ROT-13 encoded
+All values are ROT-13 encoded.
+
+Last run time  is in UTC
 
 * XP & vista
   * 5e6ab780.. ⇒ internet toolbar
@@ -24,9 +27,8 @@ All vaues are ROT-13 encoded
   * 374DE290 : Downloads
   * 0762D272 : Userprofiles
 
-Time
-
-* Last run time (UTC)
+Tool
+* 
 * Nirsoft userassistview
 
 ```
@@ -43,7 +45,7 @@ C:\Users\AppData\Local\ConnectedDevicesPlatform\{GUID}\ActivitiesCache.db
 
 ## BAM/DAM
 
-Windows background activity moderator (BAM). Desktop activity moderator (DAM).
+Windows background activity moderator (BAM) & Desktop activity moderator (DAM).
 
 Provides full path of the executed files that were run on the systems and last execution datetime
 
@@ -58,21 +60,20 @@ SYSTEM\CurrentControlSet\Services\dam\UserSettings\{SID}
 ## Shimcache - application compatibility
 
 Windows application compatibility database is used by Windows to identify possible application compatibility challenges of execution.
+The timestamp is when the file was last modified
 
-Any executable run on the Windows system could be found in this key. You can use this key to identify systems that specific malware was executed on. In addition, based on the interpretation of the time-based data you might be able to determine the last time of execution or activity on the system.
+Any executable ran on the Windows system could be found in this key. You can use this key to identify what systems the specific malware was executed on. 
+Addition, based on the interpretation of the time-based data you might be able to determine the last time of execution or activity on the system.
 
 * Windows XP contains at most 96 entries - LastUpdateTime is updated when the files are executed
-* Win 7+ contains at most 1,024 entries - LastUpdateTime does not exist on the systems, meaning it can no longer be used to determine last execute time
+* Win 7+ contains at most 1,024 entries - LastUpdateTime is removed from the entries, meaning it can no longer be used to determine last execute time
 
-Note
+**Analysis**
 
-* new content, moving or renaming the file will make a new Shimcache
+* new content, moving or renaming of the file will make a new Shimcache.
 * It will tracks the file last modification date, file path and if it was executed
 * InsertFlag = true (executed)
 
-Time
-
-* Timestamp is when the file was last modified
 
 Tool
 
@@ -84,7 +85,7 @@ XP:
 HKLM\SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatibility
 ```
 
-Win7/8/10:
+Win7+:
 
 ```
 HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache  
@@ -92,7 +93,9 @@ HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
 
 ## amcache.hve
 
-ProgramDataUpdater (a task associated with the Application Experience Service) uses the registry file Amcache.hve to store data during process creation. Amcache.hve – Keys = Amcache.hve\Root\File{Volume GUID}#####
+ProgramDataUpdater a task associated with the Application Experience Service. Uses the registry file Amcache.hve to store data during process creation. 
+
+Amcache.hve – Keys = Amcache.hve\Root\File{Volume GUID}#####
 
 Entry for every executable run, full path information, Files $StandardInfo Last Modification Time, and Disk volume the executable was run from
 
@@ -101,11 +104,10 @@ Entry for every executable run, full path information, Files $StandardInfo Last 
 * Value name are in hex from 0 to 17, 100 and 101 corresponding to a name ![](https://remnote-user-data.s3.amazonaws.com/BJmFS6dKo-ItyK1qQCSxnJQcW6tqIHTAGEwI02jHF7A8sY763OSmPQGXPTEDzW98xQ446FJx6MtlxIvCm6mAOhdYMHUy3CCuq1ixOo3pvdxqzV6HGUdIqF9wVhcyiQ4L.png)
 
 
-* First run time = last modification time of key
-
 Tool
 * amcacheParser
 
+amcache.hve location:
 ```
 C:\Windows\AppCompat\Programs\Amcache.hve 
 ```
@@ -135,11 +137,14 @@ C:\Windows\System32\SRU\SRUDB.dat
 ## Jump List
 
 With windows 7 Microsoft introduced the jump list. Which track the recent files opened by that application.
-The files inside the AutomaticDestinations are database folders.
+The files inside the AutomaticDestinations folder are databases of shell items. Because it an database file deleting the entries from the database is difficult.
 The naming convention of jump list files is {AppID}.AutomaticDestinations-ms.
 
 Where each version of an application have it own app id. [EZJumpList](https://dfir.to/EZJumpList) host a list of the common application and version and its corresponding app id.
 
+There are also custom destinations which are an optional feature developer can enable for their application.
+What it records is up to the developer. They follow the same naming convention as AutomaticDestination with {AppID}.CustomDestinations-ms.
+e.g. Firefox custom entries tracks new tabs, opening of browser, if the user was private browsing, sites.
 
 **Analysis**
 
@@ -167,8 +172,14 @@ Tools
   * Parse both automatic and custom files
 
 
+AutomaticDestination:
 ```
 %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
+```
+
+CustomDestinations:
+```
+%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations
 ```
 
 ## Last-visited MRU
@@ -189,7 +200,8 @@ NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\ LastVisi
 
 ## RUN box execution
 
-Commands typed in RUN box.
+Execution of program through the RUN box (Win+R).
+Is order by when command was executed.
 
 ```
 NTuser.dat\software\microsoft\windows\CurrentVersion\Explorer\RunMRU
@@ -197,31 +209,36 @@ NTuser.dat\software\microsoft\windows\CurrentVersion\Explorer\RunMRU
 
 ## RecentApp
 
-Track execution of GUI based application and recent file opened by that application. Can also be used to track usage of remote desktop and the destination.
+Track user execution of GUI based application and files recently opened by that application.
+Can also be used to track usage of remote desktop and the destination.
 
-Key
-
-* RecentApp GUID
-  * APPID = name of application
-  * LastaccessTIme = last execution time in UTC
-  * LunchCount = count of execution
-  * RecentItem GUID (the file the application open)
-    * path of file or destination
-    * LastAccessTime
-
-Time
-
+Keys:
+RecentApp GUID
+* APPID = name of application
 * LastaccessTIme = last execution time in UTC
+* LunchCount = count of execution
+
+RecentItem GUID (the file the application open)
+* path of file or destination
+* LastAccessTime
+
+
+
+
 
 ```
 ntuser.dat\Software\microsoft\windows\CurrentVersion\Search\RecentApps
+```
+Recent item key:
+```
+ntuser.dat\Software\microsoft\windows\CurrentVersion\Search\RecentApps\{APP GUID}\RecentItems
 ```
 
 ## Prefetch
 
 Prefetch increases the performance of the system by pre-loading code pages. The cache manager monitors all files and directories and maps them into a .pf file, which is utilized to show application execution.
 
-In the beging of win7 it was disables on system with SSD, buy was later enable again because of the performance boot, on win10+ are the files are compressed.
+In the begging of win7 it was disables on system with SSD, buy was later enable again because of the performance boot, on win10+ are the files are compressed.
 
 Analysis
 
