@@ -14,7 +14,7 @@ Last run time  is in UTC
 * XP & vista
   * 5e6ab780.. ⇒ internet toolbar
   * 75048700.. ⇒ Active Desktop
-* Win7 and up
+* Win7+
   * CEBFF5CD ⇒ executable file
   * F4E57C4B ⇒ Shortcut file execution
 * Other
@@ -28,11 +28,10 @@ Last run time  is in UTC
   * 0762D272 : Userprofiles
 
 Tool
-* 
 * Nirsoft userassistview
 
 ```
-NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\ {GUID}\Count  
+NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\{GUID}\Count  
 ```
 
 ## Win 10 timeline
