@@ -3,18 +3,19 @@
 ## Recent files
 
 Registry key that will track the last files and folders opened.
+Used to populate the information in the recent menu with the start menu. 
 
-RecentDocs
+RecentDocs key will track the overall order of the last 150 files or folders opened. MRU list  is order by when the file was opened.\
+Recentdocs is structured with subfolder of each file extension opened.
+The last entry and modification time of the key will be the time and location the last file with the specific extension was opened.
 
-* Overall key will track the overall order of the last 150 files or folders opened. MRU list will keep track of the temporal order in which each file/folder was opened. The last entry and modification time of this key will be the time and location the last file of a specific extension was opened.
+.??? file extension
 
-.???
-
-* This subkey stores the last files with a specific extension that was opened. MRU list will keep track of the temporal order in which each file was opened. The last entry and modification time of this key will be the time when and location where the last file of a specific extension was opened. Can hold op to 10 records
+* This subkey stores the last files with a specific extension that was opened. MRU list will keep track of the order in which each file was opened. The last entry and modification time of this key will be the time when and location where the last file of a specific extension was opened. Can hold op to 10 records
 
 Folder
 
-* This subkey stores the last folders that were opened. MRU list will keep track of the temporal order in which each folder was opened. The last entry and modification time of this key will be the time and location of the last folder opened.
+* This subkey stores the last folders that were opened. The MRU list will keep track of the order in which each folder was opened. The last entry and modification time of this key will be the time and location of the last folder opened.
 
 ```
 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs 
@@ -105,11 +106,9 @@ Time
 
 ## Office recent reading location
 
-Stores the information of the last reading location for the recent file opened by the user.
+Stores information of the last cursor location for files opened by the user.
+The key also stores the file path and the datetime for when the file was last closed. The datetime format is in 64-bit system time.
 
-Timestamp
-
-* datetime in 64-bit system time, stores when the file was last closed
 
 ```
 NTUSER.dat\SOFTWARE\Microsoft\Office\16.0\Word\Reading Locations\
@@ -117,12 +116,13 @@ NTUSER.dat\SOFTWARE\Microsoft\Office\16.0\Word\Reading Locations\
 
 ## Shell bags
 
-Record which *folders* were accessed by the user on the local machine, network, and removable device. 
+Records *folders* accessed by the user wether it on the local machine, network, and removable device. 
 Record user folder and viewing preferences to Windows explorer.
 
-Can be used to identify access time of folder and pinpoint deleted folder
+Can be used to identify access time of folder and pinpoint deleted folder.
 
 **Analysis**
+
 The register structure mimic the tree structure of explorer.
 Where bagMRU\0 is equal to my computer. And BagMru\0\ # is the drive letter by opening the register value data and viewing as ascii of you can identify the drive letter. And so it continues to be mapped.
 
@@ -180,7 +180,8 @@ Tools
 
 ## Open/save MRU
 
-Tracks file that have been opened or saved within a windows shell, will be tracked by file extension.
+Tracks file that have been opened and saved using the windows shell dialog box.
+It tracks by file extension.
 
 * XP
   * NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU

@@ -17,7 +17,7 @@ Last run time  is in UTC
 * Win7+
   * CEBFF5CD ⇒ executable file
   * F4E57C4B ⇒ Shortcut file execution
-* Other
+* Folder GUID
   * 6D809377 : ProgramFilesX64
   * 7C5A40EF : ProgramFIlesX86
   * 1AC14E77 : system
@@ -34,74 +34,90 @@ Tool
 NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\{GUID}\Count  
 ```
 
-## Win 10 timeline
+## Windows 10 timeline
 
-Records of recently used application and files in a timeline accessible via "win+tab" key, the data is recorded in sqLite database.
+Recordings of the recently used application and files in a timeline. That is accessible using the "win+tab" key.
+The data is stored in SQLite database.
+
+Tool
+* SQLite browser
 
 ```
 C:\Users\AppData\Local\ConnectedDevicesPlatform\{GUID}\ActivitiesCache.db  
 ```
 
-## BAM/DAM
+## BAM & DAM
 
 Windows background activity moderator (BAM) & Desktop activity moderator (DAM).
 
-Provides full path of the executed files that were run on the systems and last execution datetime
+Used for connected standby application throttling and utilization to save battery power. 
+This only exist on windows 10.
+
+Tracks the path of both gui and non-gui executed files and the last execution time of the file.
+
+**Analysis**
+
+Track both non-gui and gui programs.
+Provides full path of executable files
+Last execution date.
+
+
+BAM:
 
 ```
 SYSTEM\CurrentControlSet\Services\bam\UserSettings\{SID}  
 ```
-
+DAM:
 ```
 SYSTEM\CurrentControlSet\Services\dam\UserSettings\{SID}
 ```
 
-## Shimcache - application compatibility
+## Shimcache - Application compatibility
+
 
 Windows application compatibility database is used by Windows to identify possible application compatibility challenges of execution.
 The timestamp is when the file was last modified
 
-Any executable ran on the Windows system could be found in this key. You can use this key to identify what systems the specific malware was executed on. 
-Addition, based on the interpretation of the time-based data you might be able to determine the last time of execution or activity on the system.
+Executable get shimmed as soon as they hit the disk. If the executable is moved, rename or modified the executable gets re-shimmed by the system, adding a new entries to shimcache. 
+Any executable that have existed on the system can be found in this key. 
 
-* Windows XP contains at most 96 entries - LastUpdateTime is updated when the files are executed
-* Win 7+ contains at most 1,024 entries - LastUpdateTime is removed from the entries, meaning it can no longer be used to determine last execute time
+It should be noted that it does not get instantly get written to the register. It get written to disk when the system reboots, until that it only lives inside memory.
+
+With Windows XP  there was at most 96 entries and LastUpdateTime is updated when the file was executed.\
+As of Win 7+ the entries was increased to 1,024.
+LastUpdateTime is replaced with execution flag, meaning it can no longer be used to determine last execute time. Only if the exceptionable was run or not.
 
 **Analysis**
 
-* new content, moving or renaming of the file will make a new Shimcache.
-* It will tracks the file last modification date, file path and if it was executed
-* InsertFlag = true (executed)
+When a new executable hits the disk, moving or renaming of an PE file will make a new Shimcache entry.
+It tracks the file last modification date, file path and if it was executed, InsertFlag = true (executed).
+
+It can be used to track malware that have hit the disk. Even if it deleted, renamed, etc. you will be able to see that in the shimcache.
 
 
 Tool
-
 * AppCompatCacheParser
+* ShimCacheParser.py
 
 XP:
-
 ```
 HKLM\SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatibility
 ```
 
 Win7+:
-
 ```
 HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache  
 ```
 
-## amcache.hve
+## Amcache.hve
 
 ProgramDataUpdater a task associated with the Application Experience Service. Uses the registry file Amcache.hve to store data during process creation. 
 
-Amcache.hve – Keys = Amcache.hve\Root\File{Volume GUID}#####
-
 Entry for every executable run, full path information, Files $StandardInfo Last Modification Time, and Disk volume the executable was run from
 
-* First Run Time = Last Modification Time of Key
-* SHA1 hash of executable also contained in the key.
-* Value name are in hex from 0 to 17, 100 and 101 corresponding to a name ![](https://remnote-user-data.s3.amazonaws.com/BJmFS6dKo-ItyK1qQCSxnJQcW6tqIHTAGEwI02jHF7A8sY763OSmPQGXPTEDzW98xQ446FJx6MtlxIvCm6mAOhdYMHUy3CCuq1ixOo3pvdxqzV6HGUdIqF9wVhcyiQ4L.png)
+**Anakysis**
 
+The last written time of the key is the first time of execution for the app.
 
 Tool
 * amcacheParser
@@ -183,7 +199,7 @@ CustomDestinations:
 
 ## Last-visited MRU
 
-Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application. Example: Notepad.exe was last run using the C:%USERPROFILE%\Desktop folder
+Tracks which file extension, application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application. Example: Notepad.exe was last run using the C:%USERPROFILE%\Desktop folder
 
 XP:
 

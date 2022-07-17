@@ -28,12 +28,17 @@ Collection of different tools used to examining different type of windows eviden
 |Encryption Disk detection|Check if any disk are encrypted||
 |FKT Imager| Imaging & mounting of disk images||
 |Event log viewer| Examining windows event logs|[link](https://www.nirsoft.net/utils/full_event_log_view.html)|
-|MFTEcmd| cmd tool for export data
- from $MTF||
-
+|MFTEcmd| cmd tool for export data from $MTF||
+|SAMInsider| Analysis SAM file|
 
 
 ## **File system**
+-WIP- Create you own table.
+
+|File system||Max file size|Max volume size|Time stored| Time resolution|
+|---|---|---|---|---|
+|Fat||4GB|32GB|local|Jan 1, 1980|
+
 
 ![](https://remnote-user-data.s3.amazonaws.com/oKYqnYAWVmPJq0\_n3qgR5vkO5AECFzLzbVxlGEFwx7EkfWOYcfXGmyLzbaeEzbj5yiwCxmaQeqRLuOkiGOOz39z\_GrOiWrTFqOb38Cr0athdQ5g4NXKCvIwGODSO9a-v.png) ![](https://remnote-user-data.s3.amazonaws.com/0gR4D8dVplvyc1Pd0XoHdk\_EhFHC0hg9cbS9yGILLSI8dCyqI\_4d0ZjOXCeejuUQA-rKvimIoGN-ZjkXR1yTuygyrqHnSTm-qGVaiVhxnaidBCYi5UBDDbHmiU3I9nAx.png)
 
@@ -222,6 +227,9 @@ Introduced by Microsoft was an energy saving solution, where it will write the d
 * There exists two type of hibernation file full and reduced, Both is a compressed copy of RAM Full occur when the computer hibernation, which happens when battery get to a certain point.
 * There will be created a new smaller hibernation file at reach reboot, to allow for fast start-up which is on by default.
 
+-WIP- create own table
+
+
 ![](https://remnote-user-data.s3.amazonaws.com/kAsejjxHq94r3yoA\_LGM7FteJanf0ryxGdPMvDVboSeyvqIKIyhU\_7iArh08Aqe8btPUkocjKVpRYS9ywxcPHae8bwk4cou1oQxjz4r0iPI-p\_wAo-C0kCPGhu8RDua-.png)
 
 #### Tools
@@ -249,16 +257,25 @@ Analysis:\
 * memory-only exploits / rootkit.
 
 #### Analysis
+* Identify rouge processes
+  * Name,path,parent, command line, start time and SID.
+* Analysze process DDLs and handles
+* Review network artifacts
+  * Ports, connections and processes.
+* Look for evidence of code injection
+  * injected memory sections and process hollowing
+* check for signs of rootkit
+  * SSDT, IDT, IRP, and hooks
+* Dump suspicious processes and drivers
+  * Strings, anti-virus and reverse engineering
+  
 
-![](https://remnote-user-data.s3.amazonaws.com/Os1EdlG6Jf2JIeIJPrTXTM7r4\_2zKYcIWxXiJTJ4GmyF2Gx97\_A28xhcyR3ETk6ikjmXX3jqKgC8xfrrS-fSE3oEmmAvkHt1T8\_LaBnBh2bzJ12yXcx3dhSsg\_ygTGeQ.png)
-
-## Processes
-
-![](https://remnote-user-data.s3.amazonaws.com/oVP\_A5b7scYID727yEFJVRu1ux0rKndvMymDisLIYDHHr9FsHIILDSDsX80NJQLzpkTYErVqYua3L0cWGzvxWGkJKCgmnSwYHiLJEEjwrATQchd7pJc4LqCBXvSCCkFi.png)
 
 ## Timestamps
 
 The precious of the timestamp depends on the file system used.
+
+**WIP** Create table
 
 ![](https://remnote-user-data.s3.amazonaws.com/38vm07ZMSwFAdmLw3GzwBQTC57kuzkEp4zAdsEdengOuW1\_CoAY6ZpguxQi-w4QILc18n0ItPzgvR5PIvfIQ2ILrsAUn4zl95MfiAS8MT7fRGmYhMUr9pMpZZvq8MKs3.png) ![](https://remnote-user-data.s3.amazonaws.com/hGLcuRTKt4GV0eSEagcAV4E125e5dSd4d8QKF97uyOBiGeKI9gN8t-vR0xe3xwz\_Y\_Q3WGYBEKXPqygdEi2uGuUkeORcQ7wujCAicuf5C\_Q6bfnoI6FGuDnIMKmMbil6.png)
 

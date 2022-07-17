@@ -2,7 +2,11 @@
 
 ### Search history
 
-Stores user explorer search history or start menu
+User keyword searched for in the start menu bar on win7+ 
+The keywords are added in unicode and listed in a MRUlist.
+
+With Win8+ the search bar gets added to the explorer menu.
+
 
 ```
 ntuser.dat\software\microsoft\windows\CurrentVersion\Explorer\wordwheelQuery
@@ -10,18 +14,38 @@ ntuser.dat\software\microsoft\windows\CurrentVersion\Explorer\wordwheelQuery
 
 ### Typed path
 
-The path typed in the explorer address bar.
+The paths typed into the explorer address bar.
+Windows uses it to perm auto complete.
 
 ```
 ntuser.dat\software\microsoft\windows\CurrentVersion\Explorer\TypedPaths
 ```
 
-### OpenSaveMRU
+## Windows common dialog box
 
-Tracks files that have been opened or saved within a Windows shell dialog box. Save or open dialog box, last file opened by specific extension. Track the last file and folder opened and used to populate date in recent menus of start menu.
+The dialog box that opens when using the function *open* or *save as* with an application and the windows dialog box opens.
+
+### OpenSaveMRU 
+
+*Need more research*
+Tracks the files that have been open or saved using the Windows common dialog box. 
+
+last file opened by specific extension. 
+
+Track the last file and folder opened and used to populate date in recent menus of start menu.
 
 ```
 NTUser.dat\software\Microsoft\windows\currentVersion\Explorer\ComDlg32\OpenSavePidlMru
+```
+
+## LastVisitedMRU
+
+Tracks the last folder an application have open or saved an file in using the windows dialog box.
+Any other of opening or saving an file is not saved in this key.
+If you see an GUID instead of an executable name it an standard windows application. 
+
+```
+NTUser.dat\software\Microsoft\windows\currentVersion\Explorer\ComDlg32\LastVistedPidlMru
 ```
 
 ### XP search
@@ -36,7 +60,7 @@ Interpretation
 * 5647 = printers, computers or people
 
 ```
-NTUSER.dat\software\microsoft\search\assistant\ACMru\#
+NTUSER.dat\software\microsoft\search\assistant\ACMRU\#
 ```
 
 ### Search database

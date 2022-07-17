@@ -1,9 +1,10 @@
-# Account usage
+# Account 
+
+Information about account and authentication events.
 
 ### SAM
 
 List local account events
-
 * Last login
 * Last failed login
 * Logon count
@@ -11,33 +12,23 @@ List local account events
 * Password change
 * Password hit
 
-Time is in UTC
+**Analysis**
 
-Tool:\
-SamInsider
+If you see a user with NT-hash starting with *31DCFE0D16AE931B7* the user have blank password.
+Stores information on Account creation time, last logon time and last password change, all are stored in UTC.
+
+If the invalid login count is at 0 it could indicate that it an Microsoft account.
+
+Tool
+* SamInsider
 
 ```
 SAM\Domain\account\Users
 ```
 
-### Service events
 
-Analyze logs for suspicious service running&#x20;
 
-Event id:
-
-* 7034 – Service crashed unexpectedly
-* 7035 – Service sent a Start/Stop control
-* 7036 – Service started or stopped
-* 7040 – Start type changed (Boot | On Request | Disabled)
-* 7045 – A service was installed on the system (Win2008R2+)
-* 4697 – A service was installed on the system (from Security log)
-
-```
-windows\system32\winevt\logs\system.evtx
-```
-
-### Logon types
+### Logon event types
 
 Give information about the nature of the account authentication
 
@@ -89,19 +80,17 @@ Event Id:
 Window\System32\winevt\logs\Security.evtx
 ```
 
-### WordWheelQuery
 
-Stores user search history for explorer and start menu
+## Dead box password cracking 
 
-````
-NTUSER.DAT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\WordWheelQuery
-````
+Having both SAM and SYSTEM hive files you can export account hashes by using Mimikatz. 
 
-### Typed path
+Dump NT hashes
+```
+lsadump::sam /system:system.hive /sam:sm.hive
+```
 
-Stores the typed path in the explorer addressbar
-
-````
-NTUSER.DAT\\software\\microsoft\\windows\\CurrentVersion\\Explorer\\TypedPaths
-````
-
+Password cracking using hashcat
+```
+hashcat -m 1000 -a 3 hash.txt
+```
