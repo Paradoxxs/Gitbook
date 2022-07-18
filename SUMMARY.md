@@ -21,7 +21,7 @@
   * [User activity](forensics/windows/user-activity.md)
   * [System information](forensics/windows/system-information.md)
   * [Evidence destruction](forensics/windows/evidence-destruction.md)
-  * [Persistance](forensics/windows/persistance.md)
+  * [Persistence](forensics/windows/persistance.md)
   * [Command](forensics/windows/command.md)
   * [Memory](forensics/windows/memory.md)
   * [Backup](forensics/windows/backup.md)
@@ -34,9 +34,9 @@
   * [File knowledge](forensics/windows/file-knowledge.md)
   * [Mail](forensics/windows/mail.md)
 * [MacOS](forensics/macos/README.md)
-  * [persistance](forensics/macos/persistance.md)
+  * [persistence](forensics/macos/persistance.md)
 * [Linux](forensics/linux/README.md)
-  * [Persistance](forensics/linux/persistance.md)
+  * [Persistence](forensics/linux/persistance.md)
   * [User activity](forensics/linux/user-activity.md)
   * [File execution & information](forensics/linux/file-execution-and-information.md)
   * [Network](forensics/linux/network.md)
@@ -55,9 +55,9 @@
 ## 🕸 OSINT
 
 * [What is OSINT](osint/what-is-osint.md)
+* * [Search engines](osint/Search-engine.mdW)
 * [Sock puppet](osint/sock-puppet.md)
 * [Dark web](osint/dark-web/README.md)
-  * [What is the dark web](osint/dark-web/what-is-the-dark-web.md)
 * [Techniques](osint/techniques.md)
 * [Cryptocurrency](osint/cryptocurrency.md)
 * [Automation](osint/automation.md)
@@ -68,6 +68,7 @@
   * [Threat intel](osint/sources/threat-intel.md)
   * [Breach & leaks](osint/sources/breach-and-leaks.md)
   * [Username](osint/sources/Username.md)
+  * [Cloud](https://github.com/dafthack/MFASweep)
 
 ## ⚙ Reverse engineering
 

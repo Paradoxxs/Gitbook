@@ -74,7 +74,7 @@ Retrieving data
 
 * Search and collect data about the target.
 
-Analyzing data
+Analysis data
 
 * Transform data into information through analysis.
 
@@ -86,13 +86,16 @@ Pivoting & reporting
 
 ## Securing yourself&#x20;
 
+Setup of an secure environment that you can perform OSINT from. This is important for multiple reason.\
+One is attribution of your identity, raising awareness to the target that you are searching for them.\
+The other reason is because of site might contain malware and browser exploits. Which can infect your device with malware and spread to the rest of the organization.
 
 
 ### Virtual machine
 
 You never know what sites you are going to visits, they might be trying to infect your system,\
 Which is the reason for using an dedicated machine for OSINT which can be thrown away if it gets infected by anything.\
-I have choosen to use virtual machine, they are inexpensive, and easy to setup. \
+I have chosen to use virtual machine, they are inexpensive, and easy to setup. \
 They also allow you to keep dedicated machines to every case, there by reducing the chance for having information from one case leak into another one.&#x20;
 
 

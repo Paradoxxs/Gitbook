@@ -78,10 +78,8 @@ Every service that is hosted on a IP address need it own port, one of the most c
 
 Will allow you to search on IP addresses providing you with what ports are open on the individual ports.
 
-[Shodan.io](https://www.shodan.io/)
+[Shodan.io](https://www.shodan.io/) is another option which scans the internet looking devices and try to fingerprint the service is running on the port. When it comes to IP address we can use it to identify the service and version that are running on the IP.
 
-Shodan is another option which scans the internet looking for open ports and try to fingerprint the service is running on the port. Can we used to look for camera connected to the internet, and many other things. I like to search on organization to identify what services they have running on the internet they might have forgotten
-I recommend you buy the membership as it allow you to perform additional query and increase the API request you have. The normal price is $50 but it sometimes on sale for just $5.
 
 ## Torrenting
 

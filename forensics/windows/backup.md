@@ -6,18 +6,12 @@ Snapshot are staggered by typically one each week or when major changes happens 
 Backup of previous version of Windows\
 Allow one to revert to previous version of the computer.
 
-
-
 Tools:
 
 * Manget forensics IEF
 * VSC toolset
 * Libvshadow
 * ShadowExplorer
-
-
-
-
 
 ```
 vssadmin list shadowstorage

@@ -52,7 +52,12 @@ It common for multiple domains to be tied to a single IP address, with DNS queri
 
 
 
+[Shodan.io](https://www.shodan.io/) is another option which scans the internet looking devices and try to fingerprint the service is running on the port. It allow you to setup an alerting based on domain.\
+it also possible search on organization allowing you identify what services they have running on the internet they might have forgotten.\
 
+
+
+I recommend you buy the membership as it allow you to perform additional query and increase the API request you have. The normal price is $50 but it sometimes on sale for just $5.
 
 
 
@@ -132,12 +137,14 @@ When you visit an website you might have notices an icon in the tab bar. This is
 Before you start you have you calculate the hash value of the icon this is done with [faviconhash](https://faviconhash.com/).
 The next step is to query the hash value on [shodan.io](https://www.shodan.io) using the query **http.favicon.hash:{hash}**
 
-### Web exploration
+## Web exploration
 
 Detection of security flaws or forgotten pages, etc. 
 
+### Sn1per
 [Sn1per](https://github.com/1N3/Sn1per) automate recon tool that can be used to perform attack surface discovery, vulnerability scanning.
 
+### Wig
 [Wig](https://github.com/jekyc/wig) CMS identification tool.
 
 ````
@@ -150,6 +157,7 @@ Scan all plugin with know vulnerabilities
 wpscan --url example.com -e vp --plugins-detection mixed --api-token YOUR_TOKEN
 ````
 
+### WPscan
 [WPscan](https://github.com/wpscanteam/wpscan) Wordpress security scanning tool. Wordpress is one of the most common CMS platform to build you website on. One of the reason it pick is because it easy to setup and there are vast amount of plugins that can help you perform specific tasks.
 The problem is then at the security of these plugins is not the greatest and can add vulnerabilities to the site.
 What WPscan does it tries to identify what plugins and the version that is running on the site. And uses the WordPress vunerability database to identify if there are any vulnerabilities in the plugins, Wordpress version, site configuration.
@@ -158,6 +166,11 @@ default scan
 ````
 wpscan --url example.tld
 ````
+
+### Zep attack proxy (ZAP)
+
+[ZAP](https://www.zaproxy.org/) is a GUI web application security testing tool, created by OWASP.
+It allow you to automatic scans websites for common vulnerabilities 
 
 ## Directory & subdomain hunting
 
@@ -169,6 +182,9 @@ One of the simplest way is to use an wordlist of common directory or subdomains.
 The other options is brute-forcing and crawling the site.
 Subdomains are used to organize different sections of an website. There is no limits to the amount of subdomains you can have. There are tools can be used to perform dictionary attack against an site to identify subdomains.
 
+### Censys subdomain finder
+
+[Censys subdomian finder](https://github.com/christophetd/censys-subdomain-finder) is a tool for enumerate subdoamin using the censys certification logs. The tool return any subdomain that have issued a SSL certificate by an public CA.
 
 ### Gobuster
 
@@ -204,6 +220,7 @@ If you want to be more specific you can use the *-f* switch
 ```
 dirhunt example.com -f wp_admin,/etc/passwd
 ```
+
 ### Wfuzz
 
 [wfuzz](https://github.com/xmendez/wfuzz) is a web fuzzer that will brute-force website web application.
@@ -225,7 +242,7 @@ wfuzz -w worldlist.txt -hc 404 FUZZ.example.tld/
 Only your imagination is the limit to what wfuzz can do for you. e.g. fuzzing wordpress upload directory for hidden files.
 
 
-### Photon 
+### Photon
 
 [Photon](https://github.com/s0md3v/Photon) is a web crawler and data extraction program designed for OSINT. 
 It can easily to used to extract information from a website like names, emails documents, subdomains, API keys, etc. 
@@ -269,12 +286,35 @@ python photon.py -u example.tdl --wayback
 [Intriguq-io](https://github.com/intrigueio/intrigue-core) -WIP-
 
 
+
+
 ## Documents
 
 Documents are frequently hosted on websites. When you create an document with words and similar tools is will embed information about the user to the document metadata.  The metadata of these documents frequently not purged when uploaded to website. Allowing us to extract the information and identify information about the organization. Such as username, email, software, etc.
+
+You an use search engines such as google to search for filetypes.
+e.g. for searching for documents files
+````
+site:domain.tld filetype:pdf,xlsx,docx
+````
+This can be very extensive process of the large amount of files types and then they have to be downloaded and analyses for information.
 
 ### FOCA
 
 [FOCA](https://github.com/ElevenPaths/FOCA) is an Windows GUI tool used automate the process of finding additional domains and documents, extract and parse the metadata. The goal of FOCA is to identify as many document as possible using search engines. Once they have been identified they are downloaded and the metadata is extracted and the information analyzed.
 The goal is to identify information about the organization like usernames, email, software, etc.
 To get the most out of FOCA you need provide FOCA with Google and Bing API keys. Otherwise you will be hit will HTTP error code 429 to many request.
+
+
+## Typosquatting
+
+Registration of fake domains names that look similar to the target. 
+
+### dnstwist
+
+[dnstwist](https://github.com/elceef/dnstwist) tries to identify Typosquatting, phishing attack, brand impersonation, etc.
+
+Display only the domain that are registered.
+````python
+dnstwist --registered domain.tld
+````

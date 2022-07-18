@@ -14,7 +14,8 @@ When doing analysis always use the scientific process. You do not analysis all t
 
 1. Start by first creating an clearly defined hypotheses.
 2. Create an roadmap what information you need and how you will analysis the information.
-3. 
+3. Conduct information gathering
+4. Analyse
 
 
 ## Analysis judgement

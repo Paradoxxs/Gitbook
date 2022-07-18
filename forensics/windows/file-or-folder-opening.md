@@ -194,9 +194,11 @@ It tracks by file extension.
 ## Jump List
 
 With windows 7 Microsoft introduced the jump list. Which track the recent files opened by that application.
-The files inside the AutomaticDestinations folder are databases of shell items. Because it an database file deleting the entries from the database is difficult.
-The naming convention of jump list files is {AppID}.AutomaticDestinations-ms.
+The files inside the AutomaticDestinations folder are databases of shell items. Because it an database file deleting the entries from the database is difficult.\
+Each entries or stream within the database is a lnk file, if exported can be analysis using the same tool for lnk shortcut files.
 
+
+The naming convention of jump list files is {AppID}.AutomaticDestinations-ms.\
 Where each version of an application have it own app id. [EZJumpList](https://dfir.to/EZJumpList) host a list of the common application and version and its corresponding app id.
 
 There are also custom destinations which are an optional feature developer can enable for their application.

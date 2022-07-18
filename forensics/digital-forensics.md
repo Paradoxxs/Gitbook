@@ -24,7 +24,9 @@ The next step is to create an plan how what are you doing to investigate and how
 
 Take all the information you found and list out the information the prove or disprove the question you are trying to answer.
 
-#### What is forensically sound
+Answering the *Who What When Where And How*
+
+### What is forensically sound
 
 * Consistent
 * Repeatable

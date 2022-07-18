@@ -29,19 +29,7 @@ One major down fall to this technique is that most routing traffic infasture blo
 
 Look up who registered the domain, might not be anything useful because of GDPR allow people to hide their information, Alternative there are service that allows you to register IP address anonymously.
 
-### Google search ( Google Dorking)
-
-Google search allows you to search the internet for information. Google allows you to search for file extension locating documents that available to the public.
-
-#### Operators
-
-| Operator  | Meaning                                                                                                                        |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| site:     | Search only on site                                                                                                            |
-| filetype: | Search for filetype                                                                                                            |
-| cache:    | Google cache of page, it important to add \&strip=1 at the end of the url to ensure only resource from google cache is loaded. |
-| inurl:    | search for strings in url                                                                                                      |
-| link:     | Find pages that link to the website                                                                                            |
+                                                                              |
 
 ### CDN (Cloudflare)
 

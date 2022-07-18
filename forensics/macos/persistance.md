@@ -92,4 +92,3 @@ Allow the user to start up the application that was shutdown when logout. The ap
 ```
 ~/Library/Preferences/ByHost/com.apple.loginwindow.<UUID>.plist  
 ```
-
