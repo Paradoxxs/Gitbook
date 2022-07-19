@@ -9,6 +9,7 @@ IPv6 is a 128-bit where the limit is 3.4 x 10↑34
 When it comes to analysis IP addresses. I quickly go to [ipinfo](https://ipinfo.io/) because it can identify a lot of information. If you prefer to use cli they also have they option [ipinfo cli](https://github.com/ipinfo/cli).
 
 
+Another useful service is [ipinfodb](https://www.ipinfodb.com/) which also tries to geolocate IP addresses and perform service figerprinting.
 ## WhoIs
 
 IP are registered like domains and using the **WhoIs** command will allow you to view the current WhoIs information.
@@ -34,7 +35,7 @@ Does a everything from identifying location, VPN, Service, domains and etc.
 
 [bing.com/search?q=ip%3a+204.93.177.100](https://www.bing.com/search?q=ip%3a+204.93.177.100)
 
-Will only identify one domain, if multiple domain are hosted on the same IP use the tools above. 
+Will only identify one domain, if multiple domain are hosted on the same IP use the tools above.
 
 ````cmd
 nslookup {ip address}
@@ -45,6 +46,8 @@ It possible to cross-locate an IP address.
 Most often when searching for IP location it the providers location that is provided.
 
 [ipinfo](https://ipinfo.io/) or [ipinfo cli](https://github.com/ipinfo/cli)
+
+[ipinfodb](https://www.ipinfodb.com/)
 
 [Geo-Recon tool](https://github.com/radioactivetobi/geo-recon)
 

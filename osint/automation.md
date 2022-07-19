@@ -54,8 +54,6 @@ Recon-ng will perform a lot of web request, if you want to hide that the request
 
 
 
-
-
 ## Scrapping
 
 ### DarkScrape
@@ -65,3 +63,10 @@ Recon-ng will perform a lot of web request, if you want to hide that the request
 [Skiptracer](https://gitlab.com/illwill/skiptracer)
 
 [Scrapy](https://scrapy.org/) Will allow you to create your own web scraper.
+
+
+
+## TheHarvester
+
+[TheHarvester](https://github.com/laramies/theHarvester) is an information gathering tool that utilizes OSINT sources to gather information about the target domain, and retrieve information such as hostnames, IP addresses, employees (and their positions), email addresses, and much more.\
+It integrate with multiple sources together information from.
