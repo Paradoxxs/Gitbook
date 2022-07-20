@@ -24,9 +24,7 @@ The next step is to create an plan how what are you doing to investigate and how
 
 Take all the information you found and list out the information the prove or disprove the question you are trying to answer.
 
-Answering the *Who What When Where And How*
-
-### What is forensically sound
+#### What is forensically sound
 
 * Consistent
 * Repeatable
@@ -103,7 +101,12 @@ Once you have define that. The next step is to create an roadmap for you to foll
 
 ## Evidence
 
+### Datetime
 
+One of the difficult thing with digital forensics is datetime. This is because every device you are face with handles time differently both the timezone and the data format. 
+One an single device can handle timedate differently. e.g. Inside Windows it stores time in both UTC and local time zone. And the data format also vary widely from ascii, hex or binary format. 
+
+Which is why it critical to have an tool to decode the different timezone you are met with. I recommend [dcode](https://www.digital-detective.net/dcode/) for handling datetime data, it an free tool that can handle wide array of datetime formats. 
 
 ### Handling evidence
 
