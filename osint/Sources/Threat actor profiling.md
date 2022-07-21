@@ -19,23 +19,74 @@ https://github.com/MrTuxx/SocialPwned
 
 # Username
 
-Usernames is how we identify us self on the internet.
+Usernames is how we identify ourself on the internet.
+Some people choose to have the same username across multiple platforms allowing one to have an stronger identity on the internet. Other have an new username foreach account they create for privacy purpose making them harder to identify.\
+Once you have identify a username you can try and use this information and see if the person reused it across multiple sites.\
+Because of the vast amount of sites that exists on the internet. Going through each site manual to identify if the username exist will take too long, for this reason we have to use tools that will automate the process for us. 
 
-## Recon usernames
+## Sherlock 
 
-[blackbird](https://github.com/p1ngul1n0/blackbird)
+[Sherlock](https://github.com/sherlock-project/sherlock) python tool that hunts down social media account by username. 
 
-[UserRecon](https://github.com/issamelferkh/userrecon)
+Search for single user.
+```
+python3 sherlock username
+```
 
-https://github.com/sherlock-project/sherlock
+Search for multiple users.
+```
+python3 sherlock username username2 username3
+```
 
-https://github.com/soxoj/maigret
+## Maigret 
+
+[Maigret](https://github.com/soxoj/maigret) is an fork of sherlock project which also collect information from social media by username. At the current moment is support more then 2500 sites.\
 
 
-https://instantusername.com/#/
-https://whatsmyname.app/
-https://usersearch.org/results_normal.php
-link to user profile
+Search for single user.
+```
+python3 maigret username
+```
+
+Search for single user export report as HTML
+```
+python3 maigret username --html
+```
+
+
+## Userrecon
+
+[UserRecon](https://github.com/issamelferkh/userrecon) find username across 75 social media 
+
+usage:
+```
+.\userrecon.sh username
+```
+
+## Blackbird
+
+[blackbird](https://github.com/p1ngul1n0/blackbird) python tool that will search across 144 sites. 
+
+usage:
+```
+python3 blackbird.py -u username
+```
+
+You can also access the function of blackbird through webserver.\
+This command will start blackbird webserver. 
+
+```
+python blackbird.py --web
+```
+
+If you are not up for running script or using commandline. There also exist sites which will perform the search for you.\
+There exists many sites that will perform this kind of search for you. I have selected theses because they provide link to the user profile.
+
+* [instantusername](https://instantusername.com)
+* [whatsmyname](https://whatsmyname.app/)
+* [usersearch](https://usersearch.org/results_normal.php)
+
+An quick google search will quickly provide you other sites that can perform this kind of service for you. 
 
 # Email
 
