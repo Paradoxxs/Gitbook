@@ -1,6 +1,5 @@
 ---
-description: >-
-  Because of the vast amount of information on the internet, it an good idea to
+description: Because of the vast amount of information on the internet, it an good idea to
   automate the task that is frequently done.
 
   This section is for automation tools that does not fit into only a single source.
@@ -70,3 +69,15 @@ Recon-ng will perform a lot of web request, if you want to hide that the request
 
 [TheHarvester](https://github.com/laramies/theHarvester) is an information gathering tool that utilizes OSINT sources to gather information about the target domain, and retrieve information such as hostnames, IP addresses, employees (and their positions), email addresses, and much more.\
 It integrate with multiple sources together information from.
+
+|Switch|description|
+|---|---|
+|-d|domain|
+|-l|limit|
+|-b|source|
+
+Running an basic scan
+````
+./theHarvester.py -d domain.tld -l 100 -b all
+````
+

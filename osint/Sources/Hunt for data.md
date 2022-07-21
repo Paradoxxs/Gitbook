@@ -1,4 +1,108 @@
-# Digging for information
+# Hunt for data
+
+---
+description: Identifying alternative location of information
+---
+
+In this section is about hunting for information. We will be looking at different sources and tool that can be used to reveal new information.\
+Remember when you acquire data any data you need to verify that it legit and not been generated.\
+Because of the amount of data that get uploaded everyday to public hacker forum.\
+Specially large combo list of data breaches from multiple sites. The question is always how much of it is just duplicated data.\
+The best way to sort this is to remove any duplicate files.  
+
+## data usage
+
+These threat actor are just like everyone else, and might reuse password to multiple sites.\
+This allow us to pivot, to new accounts which might be registered with new information such as different username, email, etc.\
+
+Another note is that these data leaks contains more then just username and password.\
+It could contain information such as IP address that have connected from.\
+Account verification information, and etc.
+
+# Cloud bucket
+
+It frequently seen company have misconfigured bucket. Exposing sensitive to the public.
+
+## Cloud enum
+
+[Cloud enum](https://github.com/initstring/cloud_enum) tries to enumerate public resource within AWS, azure and google cloud.
+
+````
+./cloud_eum.py -k domain
+````
+````
+usage: cloud_enum.py [-h] -k KEYWORD [-m MUTATIONS] [-b BRUTE]
+
+Multi-cloud enumeration utility. All hail OSINT!
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -k KEYWORD, --keyword KEYWORD
+                        Keyword. Can use argument multiple times.
+  -kf KEYFILE, --keyfile KEYFILE
+                        Input file with a single keyword per line.
+  -m MUTATIONS, --mutations MUTATIONS
+                        Mutations. Default: enum_tools/fuzz.txt
+  -b BRUTE, --brute BRUTE
+                        List to brute-force Azure container names. Default: enum_tools/fuzz.txt
+  -t THREADS, --threads THREADS
+                        Threads for HTTP brute-force. Default = 5
+  -ns NAMESERVER, --nameserver NAMESERVER
+                        DNS server to use in brute-force.
+  -l LOGFILE, --logfile LOGFILE
+                        Will APPEND found items to specified file.
+  -f FORMAT, --format FORMAT
+                        Format for log file (text,json,csv - defaults to text)
+  --disable-aws         Disable Amazon checks.
+  --disable-azure       Disable Azure checks.
+  --disable-gcp         Disable Google checks.
+  -qs, --quickscan      Disable all mutations and second-level scans
+  ````
+
+
+## Cloudstorage finder
+
+[Cloud storage finder](https://github.com/digininja/CloudStorageFinder)
+Search digital ocean spaces, AWS, and google storages. 
+The project is split up in smaller ruby script each focusing on a single task
+
+*AWS*
+````
+Bucket_finder.rb -r all wordlist.txt
+````
+
+*google*
+````
+Google_finder.rb -r all wordlist.txt
+````
+*Digital ocean storage*
+````
+./space:finder.rb -r all wordlist.txt 
+````
+
+
+# Code respositories
+
+Sites like Github, gitlab, etc. are repositories for sharing code between developers.
+The good thing about Git sites is that it allow you to look through the history of the code uploaded. This allow you to sensitive information was present in previous commits. 
+
+You can look through the logs files of an repository by first cloning the repository and using the *git log* command when standing inside the project folder.
+
+````
+git log
+````
+
+## Gitrob
+
+[Gitrob](https://github.com/michenriksen/gitrob) tries to find sensitive files that have ben pushed to pulic respositories on Github.\
+It does this by cloning the respos and iterate through the commit history and flag files that matches signatures for petentially sensitive files.
+
+````
+gitrob target {git respos link}
+````
+
+
+# Dumps and leaks
 
 In this section we will only be talking data dumps that public available information.
 Which is data that have been stolen from a system that have been released to the internet.
@@ -12,8 +116,30 @@ One of the simplest way to identify if an email or domain have been part of any 
 
 ## Data brokers
 
-There exists sites which collect, index and make it searchable for an price.
-Look at threat intel page to identify sites that provides this kind of service.
+Data broker providers of information from data breaches and leaks, by collecting, index and make it searchable for an price.
+
+
+## H8mail
+
+[H8mail](https://github.com/khast3x/h8mail) open source password breach hunting tool that will query multiple data brokers sites for information about the target. You have to bring your own API key for the different service if you want premium service.
+
+## intelX
+
+[intelX](https://intelx.io/)
+
+Present data It searches in places such as the darknet, document sharing platforms, whois data, public data leaks and others. The free service only give your selective information.
+
+## Breach directory
+
+[Breach directory](https://www.breachdirectory.org/)
+Allow through leaks, what makes it difference it provides you with SHA1 hash of the password, which you can crack to identify password.
+
+## leak peek
+
+[leak peek](https://leakpeek.com/)
+
+Service to search in different breaches and leaks, will give you a partial password.
+
 
 **Dorks**
 
@@ -39,7 +165,7 @@ upload pages:
 These are just some of the anonymous upload sites there exists. When visiting hacker forums or chat application write down the services they are using and try to perform dorks on the site to see if you can gather additional information.
 
 
-# Paste
+## Paste
 
 Paste site are places where people can post text document they want to share anonymously.
 Paste are publicly available to everyone. Which is why you not use it to share sensitive information.
@@ -51,7 +177,7 @@ Paste sites:
 * [0bin](https://0bin.net/)
 * [justpaste.it](https://justpaste.it/)
 
-# Doxing
+## Doxing
 
 The process of finding and releasing the information to the public on an person.
 
@@ -211,7 +337,7 @@ You can also use *search* scape method. It will perform an deeper dive into the 
 Finally there *dump* method will dump every index as json file by the name of the index.\
 To perform an more focus dump the *matchdump* switch will only dump the index if it matches the specified criteria.\
 Using the *--filter** switch allow you to specify an txt file with keywords.\
-Some good filter kewords are password, username, email, ip, etc. 
+Some good filter kewords are password, username, email, ip, etc.
 
 ````
 ./noscrape.py -d es -tf list.txt -s matchdump --filter keywords.txt

@@ -18,7 +18,10 @@ Daemons are non-interactive and run before the user login.
 
 Agent lunch on user logon and interact with the user session.
 
-To become an launch item the malware needs to create a property list (plist) in specific location, this file will describe the object what is launched with launchd Key : program or program arguments | value : path key : RunAtLoad | values : boolean tell the system to launch the item.
+To become an launch item the malware needs to create a property list (plist) in specific location, this file will describe the object what is launched with launchd Key :
+* program or program arguments 
+* value : path key : RunAtLoad 
+* values : boole tell the system to launch the item.
 
 Agents
 
@@ -30,19 +33,18 @@ Agents
 Daemons
 
 ```
-/System/Library/LaunchDaemons´
+/System/Library/LaunchDaemons
 ```
 
 ### Cron jobs
 
-```
 Because macOS is based on unix it shares some components this is one of them. 
-```
-
 Cron jobs allow for scripts, command, etc. to be executed at define intervals
 
 ```
-crontab -l 
+crontab -l
+```
+```
 /private/var/at/tabs
 ```
 
@@ -51,12 +53,12 @@ crontab -l
 By creating an login or logout hook a script or command will be executed when a user logs in or out of the system. The hooks are stored inside a plist, the key pair to look for is either loginHook and LogoutHook
 
 ```
-~/Library/Preferences/com.apple.loginwindow.plist  
+/Library/Preferences/com.apple.loginwindow.plist  
 ```
 
 ### Dynamic libraries (dylib)
 
-Instead of loading the whole program at runtime into memory, to speed up the execution of application, dunamic libaries allow the program to only load was it necessary at the moment and load the other at runtime when needed. When it comes to malware it will try to piggy-back off another process persistance, by injecting DYLD\_INSERT\_LIBARIES into a process plist
+Instead of loading the whole program at runtime into memory, to speed up the execution of application, dunamic libaries allow the program to only load was it necessary at the moment and load the other at runtime when needed. When it comes to malware it will try to piggy-back off another process persistance, by injecting *DYLD\_INSERT\_LIBARIES* into a process plist
 
 Detection Scan all launch items and application and check the relevant property list for DYLD\_INSERT\_LIBARIES key/value pair\
 Tool Dylib hijack scanner
@@ -66,7 +68,7 @@ Tool Dylib hijack scanner
 Very similiar to con job requires that the malware have root access
 
 ```
-/etc/periodic/
+/private/etc/periodic/
 ```
 
 ### at task
@@ -82,7 +84,7 @@ At tasks are used to schedule tasks to execute at define time.
 The event monitor binary emond at /sbin/emond will load any rules from the /etc/emond.d/rules/ directory. The rule files are in the plist format and define the name, event type, and action to take
 
 ```
-/etc/emond.d/rules 
+/private/etc/emond.d/rules 
 ```
 
 ### Re-opened applications

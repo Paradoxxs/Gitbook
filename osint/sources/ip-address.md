@@ -77,11 +77,69 @@ Using mathematical and computing techniques to identify is the IP is used as VPN
 
 Every service that is hosted on a IP address need it own port, one of the most common ports are HTTP (80) and HTTPS (443). There might be additional ports available.
 
+## Censys
+
 [Censys](https://search.censys.io/)
 
 Will allow you to search on IP addresses providing you with what ports are open on the individual ports.
 
+## Shodan
+
 [Shodan.io](https://www.shodan.io/) is another option which scans the internet looking devices and try to fingerprint the service is running on the port. When it comes to IP address we can use it to identify the service and version that are running on the IP.
+
+
+## Namp
+
+-WIP- should this be part of the book?
+
+Nmap is a Port Scanner tool, used to discovery open ports, services version and OS fingerprinting
+
+Nmap scripting engine allows for [[Vulnerability Scanning]] for the most common Vulnerability  
+Scanning of [[IPv6]] is support  but limited to a single address. 
+	- OS fingerprinting, NSE scripts, SYN or connect scans and ping scan. 
+
+### Script
+--script
+`--script==vuln`  activate all script in vuln category
+-   `safe`:- Won't affect the target
+-   `intrusive`:- Not safe: likely to affect the target  
+
+-   `vuln`:- Scan for vulnerabilities
+-   `exploit`:- Attempt to exploit a vulnerability
+-   `auth`:- Attempt to bypass authentication for running services (e.g. Log into an FTP server anonymously)
+-   `brute`:- Attempt to bruteforce credentials for running services
+-   `discovery`:- Attempt to query running services for further information about the network (e.g. query an SNMP server).
+-   
+### Usage
+
+|switch|description|
+|---|---|
+|-A|Agressive mode|
+|-sV| version|
+|-sT| tcp connect scans|
+| -sS| TCP SYN scans|
+|-sN| TCP null scans|
+|-sF| TCP FIN scans|
+|-sX| TCP xmas scans|
+|-o| operation system|
+|-O| Output|
+|-oN| normal output|
+|-oG| grabable output|
+|-v| Verbose|
+|-vv| Very verbose|
+| --reason| reason |
+|-sU| udp |
+|-p-| all ports|
+|-p ##| scan port|
+|-p ##-##| port range|
+|-T|Level of aggression from 1 to 5|
+
+
+	
+ Nmap cheat sheet: 
+  - https://www.stationx.net/nmap-cheat-sheet/
+
+https://nmap.org/nsedoc/
 
 
 ## Torrenting

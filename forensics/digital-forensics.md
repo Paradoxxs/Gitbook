@@ -7,7 +7,7 @@ description: >-
 
 # Digital forensics
 
-Digital forensics is a branch of forensics science encompassing the recovery and investigation of material found in digital devices, often in relation to computer crime. So, Forensics is the technical process of recovering or collecting evidence that will be used in an investigation. In regards to Security Operations, this discipline is often associated with monitoring of employees to maintain a high-security posture, aiding with incident response to reveal details of how a compromise occurred and any post-actions (known as DFIR), as well as other tasks which require a ‘deep-dive’ into technical aspects.
+Digital forensics is a branch of forensics **science** encompassing the recovery and investigation of material found in digital devices, often in relation to computer crime. So, Forensics is the technical process of recovering or collecting evidence that will be used in an investigation. In regards to Security Operations, this discipline is often associated with monitoring of employees to maintain a high-security posture, aiding with incident response to reveal details of how a compromise occurred and any post-actions (known as DFIR), as well as other tasks which require a ‘deep-dive’ into technical aspects.
 
 Digitial forensic expert help to identify the:
 
@@ -15,6 +15,16 @@ Digitial forensic expert help to identify the:
 * Means - The tools and method used
 * Opportunity - How and when the activity was performed.
 
+Digital forensics is an science meaning that everything you do must follow the Scientific process.\
+Which mean it have to be:
+* Consistent
+* Repeatable
+* Well documented
+
+
+There exists penty of tools that try to automate the forensics processes for you.\
+You should not fully trust your tool. These tool exists to do an shotgun approach aka *google* search the evidence. Weather you find something or do not.\
+You must always go through the information manual to either **verify** what the tool found or **verify** that the tool did not find anything.
 
 ## Digital investigation plan
 
@@ -24,17 +34,9 @@ The next step is to create an plan how what are you doing to investigate and how
 
 Take all the information you found and list out the information the prove or disprove the question you are trying to answer.
 
-#### What is forensically sound
-
-* Consistent
-* Repeatable
-* Well documented
-
-
-
 ## Type of forensics
 
-#### Data artifact
+### Data artifact
 
 * BIOS
 * Unified extensible firmware interface (UEFI)

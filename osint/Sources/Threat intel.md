@@ -3,30 +3,6 @@
 There are many services which will provide threat intelligence, this could be analysis file and website if they are malicious or data breaches broker which stores and index data breaches which you can use to identify new information like password.
 
 
-# Data breaches
-
-Data providers of information from data breaches and leaks.
-
-## H8mail
-
-[H8mail](https://github.com/khast3x/h8mail) open source password breach hunting tool that will query multiple data leaks brokers sites for information about the target. You have to bring your own keys if you want premium service.
-
-## intelX
-
-[intelX](https://intelx.io/)
-
-Present data It searches in places such as the darknet, document sharing platforms, whois data, public data leaks and others. The free service only give your selective information.
-
-## Breach directory
-
-[Breach directory](https://www.breachdirectory.org/)
-Allow through leaks, what makes it difference it provides you with SHA1 hash of the password, which you can crack to identify password.
-
-## leak peek
-
-[leak peek](https://leakpeek.com/)
-
-Service to search in different breaches and leaks, will give you a partial password.
 
 # Threat intel
 

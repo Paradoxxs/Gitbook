@@ -14,7 +14,7 @@ Verbose output from the scanning
 onionscan --verbose site.onion
 ````
 
-You can also have it create a jsonReport for you. 
+You can also have it create a json report for you.
 ````
 onionscan --jsonReport site.onion
 ````
@@ -28,6 +28,7 @@ onionscan --jsonReport site.onion
 [OniOFF](https://github.com/k4m4/onioff) is an onion URL inspector.
 
 Take an list of onion sites, does URL inspection and output it to an txt file.
+
 ```
 python onioff.py -f onions.txt -o report.txt
 ```

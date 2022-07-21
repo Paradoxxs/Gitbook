@@ -120,7 +120,3 @@ SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles
 ```
 SYSTEM\currentcontrolset\services\tcpip\parameters\interfaces\{GUID}
 ```
-
-
-
-

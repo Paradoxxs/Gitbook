@@ -27,6 +27,9 @@ Google search operators
 Microsoft search engine
 I wind Bing to be an better reverse images search engine then google because of the fact that google does AI/ML on the image to do object recognition and search on the objects within the image instead of the image as a whole.
 
+Bing operator
+|Operator|Meaning|
+|ip:|Search for domains that hosted on the ip|
 
 ## Yandex
 

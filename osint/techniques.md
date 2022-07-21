@@ -1,5 +1,7 @@
 # Techniques
 
+-- WIP -- Things am not use where to put yet.
+
 ### Contact exploitation
 
 By adding the phone number of the target to a clean phone, then installing a social media app, some apps will pair you with target as a contact
@@ -29,7 +31,6 @@ One major down fall to this technique is that most routing traffic infasture blo
 
 Look up who registered the domain, might not be anything useful because of GDPR allow people to hide their information, Alternative there are service that allows you to register IP address anonymously.
 
-                                                                              |
 
 ### CDN (Cloudflare)
 

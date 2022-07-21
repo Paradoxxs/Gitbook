@@ -31,7 +31,7 @@ Have historical Whois information, it will also try to identify other sites owne
 
 **Reverse Whois**
 
-It possible to perform reverse lookup on the registrant name that was used.
+It possible to perform reverse lookup on the registrant name or email that was used.
 
 [ViewDNS reverse WhoIs](https://viewdns.info/reversewhois)
 

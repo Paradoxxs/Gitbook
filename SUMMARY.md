@@ -55,7 +55,7 @@
 ## 🕸 OSINT
 
 * [What is OSINT](osint/what-is-osint.md)
-* * [Search engines](osint/Search-engine.mdW)
+* [Search engines](osint/Search-engine.mdW)
 * [Sock puppet](osint/sock-puppet.md)
 * [Dark web](osint/dark-web/README.md)
 * [Techniques](osint/techniques.md)
@@ -64,11 +64,10 @@
 * [Sources](osint/sources/README.md)
   * [IP address](osint/sources/ip-address.md)
   * [Domains](osint/Sources/Domains.md)
-  * [Email](osint/sources/email.md)
   * [Threat intel](osint/sources/threat-intel.md)
-  * [Breach & leaks](osint/sources/breach-and-leaks.md)
-  * [Username](osint/sources/Username.md)
-  * [Cloud](https://github.com/dafthack/MFASweep)
+  * [Hunt for data](osint/sources/Hunt%20for%20data.md)
+  * [Threat actor profiling](osint/source/../Sources/Threat%20actor%20profiling.md)
+
 
 ## ⚙ Reverse engineering
 

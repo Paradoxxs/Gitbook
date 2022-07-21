@@ -59,7 +59,7 @@ Cache for web page components to speed up site load time
   * IE8-9: %USERPROFILE%\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5
   * IE10: %USERPROFILE%\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5
   * IE11: %USERPROFILE%\AppData\Local\Microsoft\Windows\INetCache\IE
-* Edge: %USERPROFILE%\AppData\Local\Packages\microsof
+* Edge: %USERPROFILE%\AppData\Local\Packages\microsoftc
 * Firefox
   * XP: %USERPROFILE%\Local Settings\ApplicationData\Mozilla\Firefox\ Profiles.default\Cache
   * Win7/8/10: %USERPROFILE%\AppData\Local\Mozilla\Firefox\ Profiles.default\Cache
