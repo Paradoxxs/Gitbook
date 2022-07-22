@@ -60,14 +60,13 @@
 * [Dark web](osint/dark-web/README.md)
 * [Techniques](osint/techniques.md)
 * [Cryptocurrency](osint/cryptocurrency.md)
-* [Automation](osint/automation.md)
 * [Sources](osint/sources/README.md)
   * [IP address](osint/sources/ip-address.md)
   * [Domains](osint/Sources/Domains.md)
   * [Threat intel](osint/sources/threat-intel.md)
   * [Hunt for data](osint/sources/Hunt%20for%20data.md)
-  * [Threat actor profiling](osint/source/../Sources/Threat%20actor%20profiling.md)
-
+  * [Threat actor profiling](osint/Sources/Threat%20actor%20profiling.md)
+  * [Infrastructure mapping](osint/sources/Infrastructure%20mapping.md)
 
 ## ⚙ Reverse engineering
 
@@ -93,3 +92,4 @@
 ## Putting it all together
 
 * [Treat actor hunting](putting-it-all-together/treat-actor-hunting.md)
+* [HUMINT](putting-it-all-together/HUMINT.md)

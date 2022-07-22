@@ -1,5 +1,3 @@
-# Hunt for data
-
 ---
 description: Identifying alternative location of information
 ---
@@ -9,6 +7,16 @@ Remember when you acquire data any data you need to verify that it legit and not
 Because of the amount of data that get uploaded everyday to public hacker forum.\
 Specially large combo list of data breaches from multiple sites. The question is always how much of it is just duplicated data.\
 The best way to sort this is to remove any duplicate files.  
+
+In this section we will only be talking data dumps that public available information.
+Which is data that have been stolen from a system that have been released to the internet.
+
+These dump can contain: Username, Emails, password, and much more.
+
+The possession of this information and exercising the method described in this section be seen at illegal by some countries.
+What is most important is that you do not use the information to perform any illegal activities.
+
+One of the simplest way to identify if an email or domain have been part of any breaches is the use the [Have I been pwned](https://haveibeenpwned.com/) service. It will also tell you what breaches the credentials have been seen in.
 
 ## data usage
 
@@ -21,7 +29,7 @@ Account verification information, and etc.
 
 # Cloud bucket
 
-It frequently seen company have misconfigured bucket. Exposing sensitive to the public.
+It frequently to see company having misconfigured bucket, exposing sensitive to the public.
 
 ## Cloud enum
 
@@ -81,10 +89,10 @@ Google_finder.rb -r all wordlist.txt
 ````
 
 
-# Code respositories
+# Code repositories
 
 Sites like Github, gitlab, etc. are repositories for sharing code between developers.
-The good thing about Git sites is that it allow you to look through the history of the code uploaded. This allow you to sensitive information was present in previous commits. 
+The good thing about Git sites is that it allow you to look through the history of the code uploaded. This allow you to sensitive information was present in previous commits.
 
 You can look through the logs files of an repository by first cloning the repository and using the *git log* command when standing inside the project folder.
 
@@ -102,19 +110,8 @@ gitrob target {git respos link}
 ````
 
 
-# Dumps and leaks
 
-In this section we will only be talking data dumps that public available information.
-Which is data that have been stolen from a system that have been released to the internet.
-
-These dump can contain: Username, Emails, password, and much more.
-
-The possession of this information and exercising the method described in this section be seen at illegal by some countries.
-What is most important is that you do not use the information to perform any illegal activities.
-
-One of the simplest way to identify if an email or domain have been part of any breaches is the use the [Have I been pwned](https://haveibeenpwned.com/) service. It will also tell you what breaches the credentials have been seen in.
-
-## Data brokers
+# Data brokers
 
 Data broker providers of information from data breaches and leaks, by collecting, index and make it searchable for an price.
 
@@ -122,6 +119,16 @@ Data broker providers of information from data breaches and leaks, by collecting
 ## H8mail
 
 [H8mail](https://github.com/khast3x/h8mail) open source password breach hunting tool that will query multiple data brokers sites for information about the target. You have to bring your own API key for the different service if you want premium service.
+
+Can be installed using pip
+````
+pip install h8mail
+````
+
+usage:
+````
+python -m h8mail -t username@domain.tld
+````
 
 ## intelX
 
@@ -141,17 +148,42 @@ Allow through leaks, what makes it difference it provides you with SHA1 hash of 
 Service to search in different breaches and leaks, will give you a partial password.
 
 
+# Leak & dumps
+
+Information that have been made available publicly either through misconfigured services or from hacking attacks. Instead of using data brokers that have automate the process for you for an premium price.\
+You also have the option to collect the information yourself. 
+
+## Hacker forums 
+
+
+
+
 **Dorks**
 
 Using dorks to find information on upload, pastes and doxing sites.
 
 1. Start with intitle:"keyword" (keep the quotes) This scans all of the names of files on Anonfiles and outputs the results that match your keyword.
-
 2. Add "+ site:anonfiles.com" (don't keep the quotes).
-
 3. The Final product should look like this: intitle:"keyword" + site:anonfiles.com
 
-# Dumps
+## Paste
+
+Paste site are places where people can post text document they want to share anonymously.
+Paste are publicly available to everyone. Which is why you not use it to share sensitive information.
+They might not live on forever because the take down by the user, violated TOS.
+Because they are public, you might be able to find archive of removed paste. Site such as [archive.org](www.archive.org). Might have saved an copy of the paste site.
+
+### PasteHunter
+
+[PasteHunter](https://github.com/kevthehermit/PasteHunter) that will query publicly available pasted data.
+
+### psbdmp
+[psbdmp.ws](https://www.psbdmp.ws/) index paste from pastebin making it searchable for you.
+
+Paste sites:
+* [pastebin](https://pastebin.com/)
+* [0bin](https://0bin.net/)
+* [justpaste.it](https://justpaste.it/)
 
 ## Anonymous upload sites
 
@@ -165,18 +197,6 @@ upload pages:
 These are just some of the anonymous upload sites there exists. When visiting hacker forums or chat application write down the services they are using and try to perform dorks on the site to see if you can gather additional information.
 
 
-## Paste
-
-Paste site are places where people can post text document they want to share anonymously.
-Paste are publicly available to everyone. Which is why you not use it to share sensitive information.
-They might not live on forever because the take down by the user, violated TOS.
-Because they are public, you might be able to find archive of removed paste. Site such as [archive.org](www.archive.org). Might have saved an copy of the paste site.
-
-Paste sites:
-* [pastebin](https://pastebin.com/)
-* [0bin](https://0bin.net/)
-* [justpaste.it](https://justpaste.it/)
-
 ## Doxing
 
 The process of finding and releasing the information to the public on an person.
@@ -184,11 +204,6 @@ The process of finding and releasing the information to the public on an person.
 [doxbin](https://doxbin.com/) collects dox from multiple sites, index and make it searchable for you.
 
 There are sites that monitor for new pastes, scrape and store them.
-
-[psbdmp.ws]([www.psbdmp.ws](https://www.psbdmp.ws/)) is one such sites that index and archive pastes.
-It a free service with API.
-
-[PasteHunter](https://github.com/kevthehermit/PasteHunter) that will query publicly available pasted data.
 
 
 

@@ -1,21 +1,35 @@
+# Building threat profile
+
+This section will be about building an threat actor profile matrix.\
+Which is an excel sheet with all the accounts, username and all other personal information related to the actor. You can start with these three tabs.
+* Accounts
+* Verifications
+* Dumps
+  
+Accounts is used to identify how email and account is connected to each other.\
+Verifications track password rest and verification question information.\
+And Dumps is data from leak and breaches.
+
+Before I start you are properly wondering what are *password reset information*.\
+When you click the *Forgot password* option on website you are prompted to verify your identity.\
+E.g. An simple example of this is when website say they have sent an reset email to *a*******@gmail.com. Other times you can select from multiple options. Such as SMS, answering security questions, and etc.\
+This information can be critical when building an profile of an person. 
+
+e.g. Verification header
+|Site|Email|username|Email|number|
+|---|---|---|---|---|
 
 
-[tiktok api](https://developers.tiktok.com/doc/login-kit-web)
-
-[telegram api](https://core.telegram.org/)
-
-[Viber api](https://developers.viber.com/docs/api/rest-bot-api/)
-
-[line api](https://developers.line.biz/en/)
+When yo are ready to start the investigation, I personally start with where the threat actors are. Hacker forums and see if you can identify any information on your target from way.\
+lets say you are looking for an threat actor names *ACE99*. What you can do is using the *insite:* operator to search for username on these forums.
 
 
-https://gitlab.com/illwill/skiptracer
-testing required
+Here I will be searching for the username within the site breached.to
+````
+ACE99 insite:breached.to
+````
 
-
-
-
-https://github.com/MrTuxx/SocialPwned
+If you see that account have been banned you might be lucky that the site have a ban list. Which list out every user that have been banned and the email address used to register the account.\
 
 # Username
 
@@ -24,7 +38,7 @@ Some people choose to have the same username across multiple platforms allowing 
 Once you have identify a username you can try and use this information and see if the person reused it across multiple sites.\
 Because of the vast amount of sites that exists on the internet. Going through each site manual to identify if the username exist will take too long, for this reason we have to use tools that will automate the process for us. 
 
-## Sherlock 
+## Sherlock
 
 [Sherlock](https://github.com/sherlock-project/sherlock) python tool that hunts down social media account by username. 
 
@@ -38,7 +52,7 @@ Search for multiple users.
 python3 sherlock username username2 username3
 ```
 
-## Maigret 
+## Maigret
 
 [Maigret](https://github.com/soxoj/maigret) is an fork of sherlock project which also collect information from social media by username. At the current moment is support more then 2500 sites.\
 
@@ -56,7 +70,7 @@ python3 maigret username --html
 
 ## Userrecon
 
-[UserRecon](https://github.com/issamelferkh/userrecon) find username across 75 social media 
+[UserRecon](https://github.com/issamelferkh/userrecon) find username across 75 social media.
 
 usage:
 ```
@@ -73,7 +87,7 @@ python3 blackbird.py -u username
 ```
 
 You can also access the function of blackbird through webserver.\
-This command will start blackbird webserver. 
+This command will start blackbird webserver.
 
 ```
 python blackbird.py --web
@@ -127,3 +141,16 @@ site:linkedin.com domain.tld email
 [Emailrep](https://emailrep.io/) Allow you to look up mails and see if they been part of any scams.\
 Another service that also allow you to search for email that have been part of an scam is [scamsearch](https://scamsearch.io/).
 
+
+
+
+
+-WIP-
+testing required
+https://github.com/MrTuxx/SocialPwned
+
+# phone number
+
+## phoneinfoga
+
+[phoneinfoga](https://github.com/sundowndev/phoneinfoga) advanced information gathering & OSINT framework for phone numbers
