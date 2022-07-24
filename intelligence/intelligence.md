@@ -1,28 +1,20 @@
 ---
-description: What is intelligence
+description: Ground work intelligence analysis
 ---
 
-# Intelligence
-
-The goal of threat intelligence is to gather, evaluate and analysis data related to an threat actor.\
-with the goal to create better insight to the tactic technique and procedure (TTP), so that policy makers can make better decisions on how to mitigate risk.
-
-Intelligence analysis is done when you do not have all the facts, an assessment needs to be performed, on the likelyhood that the hypothesis can be rejected or not.&#x20;
-
-## Intelligence sources
-
-Classic intelligence are broken into the areas to what and how you are collecting your information. Cyber threat intelligence does not have this luxury, instead we focus on all sources, by identifying various sources of data that meet the requirement and putting it all together
+Intelligence is the collection, analysis and exploitation of information in support of an specific object.
 
 
 ## Counterintelligence
 
-The purpose of couterintelligence is to identify, assess, neutralize and exploitation of intelligence activities of an adversary.
+The purpose of counterintelligence is to identify, assess, neutralize and exploitation.\
+The intelligence activities of an adversary.
 
 ## Intelligence level
 
 Tactical
 
-* Specific action that can be taken to defend the organisation.
+* Specific action that can be taken to defend the organization.
 
 Operational
 
@@ -30,95 +22,7 @@ Operational
 
 Strategic
 
-* Define the objectives and guidance on what threat should be mitigated and the security posture of the organization.
-
-## Threat actor
-
-Threat actor is a general term for a person or entity responsible for a cyber attack that impacts the confidentiality, integrity, or availability of an organization's assets. Most often, the term is used to describe individuals and groups that conduct malicious acts against organizations. These threat actors can be categorized as either unintentional or intentional, and internal or external.
-
-## Intelligence process life cycle
-
-### Direction
-
-Understanding the needs of the audience, and define intelligence requirements to address the threat
-
-What assets need to be protected?
-
-### Collection
-
-Gathering of data from different source.
-
-Data in a vacuum, without context, is difficult to interpret and understand, which is why we have multiple sources of data that can be correlated together to create intelligence, by enriching data and providing value by passing the information to the different stakeholders.
-
-![](../.gitbook/assets/image.png)
-
-
-#### Collection management framework
-
-Datasheet that explain the source of information's, what we can expect from them, and the question they can help us answer.\
-More importantly identify if you are missing sources of information.&#x20;
-
-
-
-### Processing
-
-Transforming the data into a human understandable format.
-
-#### Rosetta stone
-
-Translation naming schema what the different vendors calls malware, threat actors, etc.. Very helpful to understand different threat reports.
-
-### Analysis
-
-Assessment of the treat TTP based on the data collected.
-
-#### Bias
-
-Everyone has bias, it the human brain trying to simplify information around us.
-it important for an analyst to be aware of their own bias, allowing you to counter your biases the effect on your analysis.
-
-Which is why the CTI team, need to be compromised of multiple different type of people, with difference experience and backgrounds to combat their biases.
-
-Cognitive bias [24 Cognitive Biases stuffing up your thinking](https://yourbias.is/)
-
-#### Structured analytic techniques (SAT)
-
-* Decision matrix
-* Decision trees
-
-#### Data pivoting / Analytic leaps
-
-1. Start with single indicator
-2. Pivot through each data source and add relevant data points
-3. Validate, ensure links contain context and ensure the links are meaningful
-4. Identify the relevant indicators
-5. Be aware of the Kevin bacon effect
-   * It takes 6 hops/pivoting to know anyone in the world.
-
-### Dissemination
-
-Distribution of the intelligence report, It important that the report is delivered in such away that the consumer can understand it and apply it to their need.
-
-
-
-Traffic light protocol (TLP)
-
-Defined widely recognized threat intel protection level and who it can be shared with.&#x20;
-
-![](https://remnote-user-data.s3.amazonaws.com/a3ZQFulpDQV1Jd96ztQoQ8LY5GnnYfySNMbJ5Np-CB-ocw4DrZ\_PlG7n8jeS0NdBQbFBi69JxcYWJs5V4dSQw-Iv9\_sEOkg1XD6YA3UgfGlBJ2KSdWEj4zZygzbxe732.png)
-
-#### Estimative language
-
-Because the meaning of words like likely, might, etc. is highly subjectively, which is why it is important to have an agreed-upon language of the estimate, like a scale
-
-![](https://remnote-user-data.s3.amazonaws.com/clrfQYuefDhDtBOT7T4PnYaHtz\_W\_tUCNRXwJpj8d3hJ3\_py6mYTgJoPfEoNkt618tUpSzARCFGq2W2yeJ1b4-MvhWX1Iw9jQVnYrVX9Ygtsy57wOh81UHBtTBkf5DmJ.png)
-
-Another good idea is to add percentages to make the meaning clear. e.g. might happen (70%)
-
-### Feedback
-
-Feedback loop for improving the process.
-
+* Define the objectives and guidance on what threats should be mitigated and the security posture of the organization.
 
 ## Intelligence classification
 
@@ -133,5 +37,105 @@ The threat is known but not understood
 **Known-known**
 
 We both know and understand the threat, and resource to put in place to mitigate them.
+
+
+# Intelligence process life cycle
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/The_Intelligence_Process_JP_2-0.png/350px-The_Intelligence_Process_JP_2-0.png)
+
+## Direction
+
+Understanding the needs of the audience, and define intelligence requirements to address the threat relevant to the organization.
+
+## Collection
+
+Gathering of data from different source. This is mostly an automated process, this is mostly because there to much information to be collected manual.\
+This is specially true when it comes to the internal system.
+
+Data in a vacuum, without context, is difficult to interpret and understand, which is why we have multiple sources of data that can be correlated together to create intelligence, by enriching data with context. Providing value by passing the information to the different stakeholders.
+
+
+### Collection management framework
+
+Collection management framework is an data sheet that explain the different source of information.\
+what we can expect from them.\
+and the question they can help us answer.\
+More importantly identify if you are missing any sources of information.&#x20;
+
+-WIP- create collection management framework table
+
+
+
+## Processing & exploitation
+
+This stage involves the translation of the raw data into an format that either human understandable format or common computer format for injection.\
+Another part of this stage is the evaluation on the relevance and reliability of the data collected.
+
+
+### Rosetta stone
+
+Translation naming schema what the different vendors calls malware, threat actors, etc.. Very helpful to understand different threat reports.
+
+## Analysis
+
+Combining separate pieces of information to identify patterns within the data.\
+Then interprets what the significance of the new knowledge.
+
+![](https://upload.wikimedia.org/wikipedia/commons/e/ee/Relationship_of_data%2C_information_and_intelligence.png)
+
+
+### Bias
+
+Everyone has bias, it the human brain trying to simplify information around us.
+it important for an analyst to be aware of their own bias, allowing you to counter your biases the effect on your analysis.
+
+Which is why the intel team, need to be compromised of multiple different type of people, with difference experience and backgrounds to combat their biases.
+
+Cognitive bias [24 Cognitive Biases stuffing up your thinking](https://yourbias.is/)
+
+### Structured analytic techniques (SAT)
+
+* Decision matrix
+* Decision trees
+
+### Data pivoting / Analytic leaps
+
+1. Start with single indicator
+2. Pivot through each data source and add relevant data points
+3. Validate, ensure links contain context and ensure the links are meaningful
+4. Identify the relevant indicators
+5. Be aware of the Kevin bacon effect
+   * It takes 6 hops/pivoting to know anyone in the world.
+
+## Dissemination
+
+Distribution of the intelligence report, It important that the report is delivered in such away that the consumer can understand it and apply it to their need.
+
+
+
+
+### Estimative language
+
+Because the meaning of words like: likely, might happen, etc.\
+Is highly subjectively, which is why it is important to have an agreed-upon language of the estimate, like a scale.
+
+|Word|estimate|variable|
+|---|---|---|
+|Certain	|100%|Give or take 0%|
+|Almost Certain|93%|Give or take about 6%|
+|Probable	|75%|Give or take about 12%|
+|Chances About Even|50%|Give or take about 10%|
+|Probably Not	|30%|Give or take about 10%|
+|Almost Certainly Not|7%|Give or take about 5%|
+|Impossible|0|Give or take 0%|
+
+
+Another good idea is to add percentages to make the meaning clear. e.g. might happen (70%)
+
+## Feedback
+
+Feedback loop for improving the process.
+
+
 
 

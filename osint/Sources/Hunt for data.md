@@ -151,16 +151,50 @@ Service to search in different breaches and leaks, will give you a partial passw
 # Leak & dumps
 
 Information that have been made available publicly either through misconfigured services or from hacking attacks. Instead of using data brokers that have automate the process for you for an premium price.\
-You also have the option to collect the information yourself. 
+You also have the option to collect the information yourself.\
+The method of during during so we will describe in the section below.
 
 ## Hacker forums 
 
+Forums are the social network for the hackers.\
+Speically new hackers act without much thinking and there for leave an trail of information that can lead back to their real identity.
 
+This can be used to identify more experience hackers.\
+If you are able to get hold of old hackers forum dumps.\
+You might be able to link old accounts to threat actors. Where the OpSec was not their priority and identify the true identity of the person.
+
+Another part of hacker forums is when hacker are feuding. This can leads us to golden information if they decided to dox eachother. 
+
+What more about these forums, if they are a marketplace for leads, exploits, dumps and much more for a price.\
+What important for us is when leaks and dumps are release for free, allowing us to download the information which we can use in future investigation.\
+
+I will not be mention any forum, not because I find it immoral.\
+Instead it because they get taken down, changed, etc. That by the time you read this part it will already been taken down.
+
+## Telegram
+
+Since Telegram added channels to the server they have become quite popular. These channels are publicly available.\
+This also include hackers and black market. We see these channels are used as marketplace for threat group to see their information. It frequently to see these channels provides sample data for people to keep them entries. Other channels share public available dumps for you to download.\
+The good thing about telegram channel is that you do not have to go through the trouble of earning forum points, to gain access to the data.\
+There no official method to search for channels. With some google operators you are able to identify channels. 
+
+```
+site:telegram.me "breach"
+```
+```
+site:t.me "breach"
+```
+There exist sites that tries to index telegram channels, allowing you to search for channels of interest.
+
+Site:
+[telemetr](https://telemetr.io/en/channels?channel=leak+data)
+[telegramchannels](https://telegramchannels.me/search?type=all&search=breach)
+[telegram-group](https://www.telegram-group.com/en?s=breach)
 
 
 **Dorks**
 
-Using dorks to find information on upload, pastes and doxing sites.
+useful dorks to find information on upload, pastes and doxing sites.
 
 1. Start with intitle:"keyword" (keep the quotes) This scans all of the names of files on Anonfiles and outputs the results that match your keyword.
 2. Add "+ site:anonfiles.com" (don't keep the quotes).

@@ -5,10 +5,10 @@
 ## 🧠 Intelligence
 
 * [Intelligence](intelligence/intelligence.md)
-* [Analysis](intelligence/analysis.md)
-* [Threat modeling](intelligence/threat-modeling.md)
+* [Intelligence analysis](intelligence/Intelligence%20analysis.md)
 * [Cyber treat intelligence](intelligence/cyber-treat-intelligence.md)
 * [Frameworks](intelligence/frameworks.md)
+* [Attribution](intelligence/Attribution.md)
 * [Building CTI program](intelligence/building-cti-program.md)
 
 ## 🔬 Forensics
